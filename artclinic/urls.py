@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 
 from artclinic import settings
+from main.views import index_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index_view)
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
