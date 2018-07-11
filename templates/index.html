@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu:400,500,700&amp;subset=cyrillic,cyrillic-ext"
           rel="stylesheet">
 </head>
-<body>
+<body id="home">
 
-<header>
+<header uk-sticky>
     <div class="uk-container">
         <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
 
             <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo" href="#">
+                <a class="uk-navbar-item uk-logo" href="#home">
                     <img src="{% static 'images/fixed-header-logotype.svg' %}" class="fixed-logo" alt="logotype">
                 </a>
             </div>
@@ -28,22 +28,22 @@
 
                 <ul class="uk-navbar-nav">
                     <li>
-                        <a href="#">Акции</a>
+                        <a href="#sales">Акции</a>
                     </li>
                     <li>
-                        <a href="#">О нас</a>
+                        <a href="#about">О нас</a>
                     </li>
                     <li>
-                        <a href="#">Услуги</a>
+                        <a href="#services">Услуги</a>
                     </li>
                     <li>
-                        <a href="#">Специалисты</a>
+                        <a href="#specialists">Специалисты</a>
                     </li>
                     <li>
-                        <a href="#">Наши работы</a>
+                        <a href="#our-works">Наши работы</a>
                     </li>
                     <li>
-                        <a href="#">Контакты</a>
+                        <a href="#contacts">Контакты</a>
                     </li>
                 </ul>
 
@@ -83,18 +83,21 @@
                 красоту”. Текст уместить на 3-4 строки, не больше.</p>
 
             <div class="bordered-button typical-button">
-                <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на прием</button>
+                <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на прием
+                </button>
             </div>
         </div>
     </div>
 
-    <div class="uk-container uk-container-expand">
-        <div class="uk-child-width-1-3 uk-grid-large" uk-grid uk-height-match>
+    <div class="uk-container uk-container-expand" id="sales">
+        <div class="uk-child-width-1-3" uk-grid uk-height-match>
             <div>
                 <div class="offers-container uk-height-1-1">
                     <div class="offers-content uk-height-1-1">
                         <div class="uk-height-1-1">
-                            <h4>Актуальные предложения</h4>
+                            <div class="section-title">
+                                <h4>Актуальные предложения</h4>
+                            </div>
                             <p>тут какой-нибудь текст типа у нас всегда акции всё збс подписывайтесь ставьте лайки</p>
                         </div>
                     </div>
@@ -113,7 +116,7 @@
                                     </div>
                                     <span class="line"></span>
 
-                                    <p>с 1 по 20 июля скидка 20%  на блефаропластику!
+                                    <p>с 1 по 20 июля скидка 20% на блефаропластику!
                                         //ограничение по количеству строк - 5</p>
                                 </div>
                             </li>
@@ -124,7 +127,7 @@
                                     </div>
                                     <span class="line"></span>
 
-                                    <p>с 1 по 20 июля скидка 20%  на блефаропластику!
+                                    <p>с 1 по 20 июля скидка 20% на блефаропластику!
                                         //ограничение по количеству строк - 5</p>
                                 </div>
                             </li>
@@ -135,14 +138,16 @@
                                     </div>
                                     <span class="line"></span>
 
-                                    <p>с 1 по 20 июля скидка 20%  на блефаропластику!
+                                    <p>с 1 по 20 июля скидка 20% на блефаропластику!
                                         //ограничение по количеству строк - 5</p>
                                 </div>
                             </li>
                         </ul>
 
-                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                        <a class="uk-position-bottom-left uk-position-small uk-hidden-hover" href="#"
+                           uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-bottom-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                           uk-slideshow-item="next"></a>
 
                     </div>
 
@@ -154,7 +159,9 @@
                 <div class="sales-container uk-height-1-1">
                     <div class="sales-content uk-height-1-1">
                         <div class="uk-height-1-1">
-                            <h4>Ждете подходящую акцию?</h4>
+                            <div class="section-title">
+                                <h4>Ждете подходящую акцию?</h4>
+                            </div>
                             <p>Подпишитесь и будьте всегда в курсе самых выгодных предложений!</p>
 
                             <form>
@@ -169,7 +176,7 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-default about-section">
+<div class="uk-section uk-section-default about-section" id="about">
     <div class="uk-container">
         <div class="uk-grid-large" uk-grid>
             <div class="uk-width-1-3">
@@ -213,12 +220,12 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-default category-section">
+<div class="uk-section uk-section-default category-section" id="services">
     <div class="uk-container">
         <div uk-filter="target: .js-filter">
             <div class="uk-grid-small" uk-grid>
                 <div class="uk-width-1-3">
-                    <div class="uk-inline uk-light body-image">
+                    <div class="uk-inline body-image">
                         <img src="{% static 'images/body.png' %}" alt="body image">
                         <a class="uk-position-absolute uk-transform-center uk-active" style="left: 28%; top: 12%"
                            href="#"
@@ -251,10 +258,10 @@
                                 <li uk-toggle="target: #modal-center">Подтяжка бровей (броулифтинг)</li>
                                 <li uk-toggle="target: #modal-center">Фейслифтинг (хирургическая подтяжка лица)</li>
                                 <li uk-toggle="target: #modal-center">Удаление жировых комочков Биша</li>
+                                <li uk-toggle="target: #modal-center">Оптопластика</li>
                                 <li uk-toggle="target: #modal-center">Удаление кожных образований (бородавки, родинки,
                                     полипы, невусы)
                                 </li>
-                                <li uk-toggle="target: #modal-center">Оптопластика</li>
                                 <li uk-toggle="target: #modal-center">Фронтлифтинг (лоб)</li>
                                 <li uk-toggle="target: #modal-center">Хейлопластика (булхорн)</li>
                             </ul>
@@ -332,14 +339,14 @@
                             </ul>
                         </div>
                     </div>
-                    <a class="uk-link-text" href="#">Посмотреть весь список услуг</a>
+                    <a class="uk-link-text all-services-link" href="#all-services">Посмотреть весь список услуг</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="uk-section uk-section-default services-section">
+<div class="uk-section uk-section-default services-section" id="all-services">
     <div class="uk-container">
         <div class="all-services-container">
             <p>Наша клиника предоставляет следующие услуги в области <br> хирургии и косметологии:</p>
@@ -405,7 +412,7 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-default specialists-section">
+<div class="uk-section uk-section-default specialists-section" id="specialists">
     <div class="uk-container">
         <div class="section-title">
             <h4>Наши специалисты</h4>
@@ -421,7 +428,8 @@
                             <div class="specialist-card">
                                 <div class="image-wrap">
                                     <div class="uk-inline uk-light">
-                                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
+                                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
+                                             width="250"
                                              height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                         <div class="image-border"></div>
                                         <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
@@ -452,7 +460,7 @@
                             <div class="specialist-card">
                                 <div class="image-wrap">
                                     <div class="uk-inline uk-light">
-                                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
+                                        <img data-src="images/doc1.jpg" class="uk-border-circle" width="250"
                                              height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                         <div class="image-border"></div>
                                         <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
@@ -467,7 +475,7 @@
                             <div class="specialist-card">
                                 <div class="image-wrap">
                                     <div class="uk-inline uk-light">
-                                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
+                                        <img data-src="images/doc1.jpg" class="uk-border-circle" width="250"
                                              height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                         <div class="image-border"></div>
                                         <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
@@ -482,7 +490,8 @@
                             <div class="specialist-card">
                                 <div class="image-wrap">
                                     <div class="uk-inline uk-light">
-                                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
+                                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
+                                             width="250"
                                              height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                         <div class="image-border"></div>
                                         <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
@@ -516,37 +525,40 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-default works-section">
+<div class="uk-section uk-section-default works-section" id="our-works">
     <div class="uk-container">
-        <ul class="work-type uk-list">
-            <li class="active-type" data-type="0">List item 1 <span class="line"></span></li>
-            <li data-type="1">List item 2 <span class="line"></span></li>
-            <li data-type="2">List item 3 <span class="line"></span></li>
-        </ul>
+        <div class="examples-block">
+            <ul class="work-type uk-list">
+                <li class="active-type" data-type="0">Блефаропластика <span class="line"></span></li>
+                <li data-type="1">Блефаропластика <span class="line"></span></li>
+                <li data-type="2">Блефаропластика <span class="line"></span></li>
+            </ul>
 
-        <div class="works-slider">
-            <div class="sl-slide">
-                <div class="double-image twentytwenty-container">
-                    <!-- The before image is first -->
-                    <img src="{% static 'images/about-us-img.jpg' %}"/>
-                    <!-- The after image is last -->
-                    <img src="{% static 'images/doc2.jpg' %}"/>
+
+            <div class="works-slider">
+                <div class="sl-slide">
+                    <div class="double-image twentytwenty-container">
+                        <!-- The before image is first -->
+                        <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
+                        <!-- The after image is last -->
+                        <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                    </div>
                 </div>
-            </div>
-            <div class="sl-slide">
-                <div class="double-image twentytwenty-container">
-                    <!-- The before image is first -->
-                    <img src="{% static 'images/about-us-img.jpg' %}"/>
-                    <!-- The after image is last -->
-                    <img src="build/img/form-bg.jpg"/>
+                <div class="sl-slide">
+                    <div class="double-image twentytwenty-container">
+                        <!-- The before image is first -->
+                        <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
+                        <!-- The after image is last -->
+                        <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                    </div>
                 </div>
-            </div>
-            <div class="sl-slide">
-                <div class="double-image twentytwenty-container">
-                    <!-- The before image is first -->
-                    <img src="{% static 'images/about-us-img.jpg' %}"/>
-                    <!-- The after image is last -->
-                    <img src="build/img/form-bg.jpg"/>
+                <div class="sl-slide">
+                    <div class="double-image twentytwenty-container">
+                        <!-- The before image is first -->
+                        <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
+                        <!-- The after image is last -->
+                        <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -555,7 +567,7 @@
 
 <footer>
     <div class="uk-container">
-        <div class="map-wrapper">
+        <div class="map-wrapper" id="contacts">
             <div class="contact-block">
                 <h4>Контакты</h4>
                 <span class="line"></span>
@@ -576,16 +588,16 @@
         </div>
 
         <div class="footer-navigation">
-            <img data-src="images/footer-logotype.svg" width="187" height="37" alt="icon" uk-img>
+            <img data-src="{% static 'images/footer-logotype.svg' %}" width="187" height="37" alt="icon" uk-img>
 
             <ul class="uk-navbar-nav">
-                <li><a href="#">ARTclinic</a></li>
-                <li><a href="#">Акции</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">Специалисты</a></li>
-                <li><a href="#">Наши работы</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="#home">ARTclinic</a></li>
+                <li><a href="#sales">Акции</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#specialists">Специалисты</a></li>
+                <li><a href="#our-works">Наши работы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
             </ul>
 
             <p>ARTclinic © 2018. Все права защищены</p>
@@ -593,18 +605,21 @@
             <ul class="uk-navbar-item social">
                 <li>
                     <a href="#">
-                        <img data-src="{% static 'images/footer-phone-icon.svg' %}" width="14" height="14" alt="icon" uk-img>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img data-src="{% static 'images/footer-instagram-icon.svg' %}" width="14" height="14" alt="icon"
+                        <img data-src="{% static 'images/footer-phone-icon.svg' %}" width="14" height="14" alt="icon"
                              uk-img>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <img data-src="{% static 'images/footer-fb-icon.svg' %}" width="14" height="14" alt="icon" uk-img>
+                        <img data-src="{% static 'images/footer-instagram-icon.svg' %}" width="14" height="14"
+                             alt="icon"
+                             uk-img>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img data-src="{% static 'images/footer-fb-icon.svg' %}" width="14" height="14" alt="icon"
+                             uk-img>
                     </a>
                 </li>
             </ul>
@@ -629,7 +644,8 @@
             реабилитации не превышает 10—12 дней.</p>
 
         <div class="typical-button">
-            <button class="uk-button uk-button-default">Записаться на прием</button>
+            <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на прием
+            </button>
         </div>
 
     </div>
@@ -638,12 +654,12 @@
 <div id="appointment-modal" class="uk-flex-top appointment-modal" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
-        <button class="uk-modal-close-default" type="button" uk-close="ratio: 2"></button>
+        <button class="uk-modal-close-default" type="button" uk-close></button>
 
-        <h4>Записаться на прием</h4>
+        <h4>Записаться на <br> прием</h4>
         <span class="line"></span>
 
-        <p>Оставьте заявку и наш оператор перезвонит Вам!</p>
+        <p>Оставьте заявку и наш оператор <br> перезвонит Вам!</p>
 
         <form>
             <fieldset class="uk-fieldset">
@@ -721,7 +737,8 @@
         </div>
 
         <div class="typical-button">
-            <button class="uk-button uk-button-default">Записаться на прием</button>
+            <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на прием
+            </button>
         </div>
 
     </div>
@@ -751,6 +768,16 @@
 
     $(function () {
         var worksSlider = $('.works-slider');
+
+        $(".uk-navbar-nav > li > a").on("click", function () {
+            $(".uk-navbar-nav > li").removeClass("uk-active");
+            $(this).parent("li").addClass("uk-active");
+        });
+
+        $('.uk-navbar-nav a[href^="#"], .all-services-link, .uk-logo').on("click", function (t) {
+            var e = $(this.getAttribute("href"));
+            e.length && (t.preventDefault(), $("html, body").stop().animate({scrollTop: e.offset().top}, 1e3));
+        });
 
         worksSlider.slick({
             infinite: false,
