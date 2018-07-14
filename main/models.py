@@ -40,3 +40,16 @@ class Specialist(models.Model):
 
     def __str__(self):
         return "{}".format(self.full_name)
+
+
+class Email(models.Model):
+    email = models.EmailField(verbose_name='Email')
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Emails'
+        verbose_name = 'email'
+
+    def __str__(self):
+        return "{}".format(str(self.email))

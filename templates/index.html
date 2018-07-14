@@ -109,39 +109,18 @@
                     <div class="uk-position-relative uk-height-1-1">
 
                         <ul class="uk-slideshow-items">
-                            <li>
-                                <div class="sale-card uk-height-1-1">
-                                    <div class="section-title">
-                                        <h4>АКЦИЯ</h4>
-                                    </div>
-                                    <span class="line"></span>
+                            {% for item in actions %}
+                                <li>
+                                    <div class="sale-card uk-height-1-1">
+                                        <div class="section-title">
+                                            <h4>АКЦИЯ</h4>
+                                        </div>
+                                        <span class="line"></span>
 
-                                    <p>с 1 по 20 июля скидка 20% на блефаропластику!
-                                        //ограничение по количеству строк - 5</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="sale-card uk-height-1-1">
-                                    <div class="section-title">
-                                        <h4>АКЦИЯ</h4>
+                                        <p>{{ item.description }}</p>
                                     </div>
-                                    <span class="line"></span>
-
-                                    <p>с 1 по 20 июля скидка 20% на блефаропластику!
-                                        //ограничение по количеству строк - 5</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="sale-card uk-height-1-1">
-                                    <div class="section-title">
-                                        <h4>АКЦИЯ</h4>
-                                    </div>
-                                    <span class="line"></span>
-
-                                    <p>с 1 по 20 июля скидка 20% на блефаропластику!
-                                        //ограничение по количеству строк - 5</p>
-                                </div>
-                            </li>
+                                </li>
+                            {% endfor %}
                         </ul>
 
                         <a class="uk-position-bottom-left uk-position-small uk-hidden-hover" href="#"
