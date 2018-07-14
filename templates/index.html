@@ -7,7 +7,7 @@
     <title>Art Clinic</title>
     <link rel="stylesheet" href="{% static 'css/twentytwenty.css' %}">
     <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
-    <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu:400,500,700&amp;subset=cyrillic,cyrillic-ext"
           rel="stylesheet">
@@ -124,39 +124,19 @@
                         <div class="uk-position-relative uk-height-1-1">
 
                             <ul class="uk-slideshow-items">
-                                <li class="uk-height-1-1">
-                                    <div class="sale-card uk-height-1-1">
-                                        <div class="section-title">
-                                            <h4>АКЦИЯ</h4>
-                                        </div>
-                                        <span class="line"></span>
 
-                                        <p>с 1 по 20 июля скидка 20% на блефаропластику!
-                                            //ограничение по количеству строк - 5</p>
-                                    </div>
-                                </li>
-                                <li class="uk-height-1-1">
-                                    <div class="sale-card uk-height-1-1">
-                                        <div class="section-title">
-                                            <h4>АКЦИЯ</h4>
-                                        </div>
-                                        <span class="line"></span>
+                                {% for item in actions %}
+                                    <li class="uk-height-1-1">
+                                        <div class="sale-card uk-height-1-1">
+                                            <div class="section-title">
+                                                <h4>АКЦИЯ</h4>
+                                            </div>
+                                            <span class="line"></span>
 
-                                        <p>с 1 по 20 июля скидка 20% на блефаропластику!
-                                            //ограничение по количеству строк - 5</p>
-                                    </div>
-                                </li>
-                                <li class="uk-height-1-1">
-                                    <div class="sale-card uk-height-1-1">
-                                        <div class="section-title">
-                                            <h4>АКЦИЯ</h4>
+                                            <p>{{ item.description }}</p>
                                         </div>
-                                        <span class="line"></span>
-
-                                        <p>с 1 по 20 июля скидка 20% на блефаропластику!
-                                            //ограничение по количеству строк - 5</p>
-                                    </div>
-                                </li>
+                                    </li>
+                                {% endfor %}
                             </ul>
 
                             <a class="uk-position-bottom-left uk-position-small uk-hidden-hover" href="#"
@@ -176,7 +156,7 @@
                         <div class="sales-content uk-height-1-1">
                             <div class="uk-height-1-1">
                                 <div class="title-underline">
-                                    <h4><span><span>Ждете</span></span> <span><span>подходящую</span></span>
+                                    <h4><span><span>Ждете</span></span> <span><span> подходящую</span></span>
                                         <span><span>акцию?</span></span></h4>
                                 </div>
                                 <p>Подпишитесь и будьте всегда в курсе самых выгодных предложений!</p>
@@ -222,7 +202,7 @@
                                     <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
                                 </li>
                                 <li>
-                                    <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
+                                    <img src="images/about-us-img.jpg" alt="" uk-cover>
                                 </li>
                             </ul>
 
@@ -368,7 +348,7 @@
     <div class="uk-section uk-section-default services-section" id="all-services">
         <div class="uk-container">
             <div class="all-services-container">
-                <img data-src="images/lines.svg" class="lines uk-visible@l" width="100" height="40"
+                <img data-src="{% static 'images/lines.svg' %}" class="lines uk-visible@l" width="100" height="40"
                      alt="head image" uk-img>
                 <p>Наша клиника предоставляет следующие услуги в области <br> хирургии и косметологии:</p>
 
@@ -433,7 +413,7 @@
                     </div>
                 </div>
 
-                <img data-src="images/head.png" class="head uk-visible@l" width="230" height="320"
+                <img data-src="{% static 'images/head.png' %}" class="head uk-visible@l" width="230" height="320"
                      alt="head image" uk-img>
             </div>
         </div>
@@ -455,8 +435,7 @@
                                 <div class="specialist-card">
                                     <div class="image-wrap">
                                         <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
-                                                 width="250"
+                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
                                                  height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                             <div class="image-border"></div>
                                             <a class="uk-position-absolute uk-transform-center"
@@ -489,8 +468,7 @@
                                 <div class="specialist-card">
                                     <div class="image-wrap">
                                         <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
-                                                 width="250"
+                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
                                                  height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                             <div class="image-border"></div>
                                             <a class="uk-position-absolute uk-transform-center"
@@ -506,8 +484,7 @@
                                 <div class="specialist-card">
                                     <div class="image-wrap">
                                         <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
-                                                 width="250"
+                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
                                                  height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                             <div class="image-border"></div>
                                             <a class="uk-position-absolute uk-transform-center"
@@ -523,8 +500,7 @@
                                 <div class="specialist-card">
                                     <div class="image-wrap">
                                         <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
-                                                 width="250"
+                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
                                                  height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                             <div class="image-border"></div>
                                             <a class="uk-position-absolute uk-transform-center"
@@ -589,9 +565,9 @@
                     <div class="sl-slide">
                         <div class="double-image twentytwenty-container">
                             <!-- The before image is first -->
-                            <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
+                            <img src="images/about-us-img.jpg" alt="slider image">
                             <!-- The after image is last -->
-                            <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                            <img src="images/doc1.jpg" alt="slider-image">
                         </div>
                     </div>
                 </div>
@@ -601,8 +577,7 @@
 
     <footer>
         <div class="uk-container">
-            <img data-src="{% static 'images/round.svg' %}" class="round uk-visible@l" width="145" height="95"
-                 alt="round image"
+            <img data-src="{% static 'images/round.svg' %}" class="round uk-visible@l" width="145" height="95" alt="round image"
                  uk-img>
 
             <div class="map-wrapper" id="contacts">
@@ -645,22 +620,19 @@
                 <ul class="uk-navbar-item social">
                     <li>
                         <a href="#">
-                            <img data-src="{% static 'images/footer-phone-icon.svg' %}" width="14" height="14"
-                                 alt="icon"
+                            <img data-src="{% static 'images/footer-phone-icon.svg' %}" width="14" height="14" alt="icon"
                                  uk-img>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img data-src="{% static 'images/footer-instagram-icon.svg' %}" width="14" height="14"
-                                 alt="icon"
+                            <img data-src="{% static 'images/footer-instagram-icon.svg' %}" width="14" height="14" alt="icon"
                                  uk-img>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img data-src="{% static 'images/footer-fb-icon.svg' %}" width="14" height="14" alt="icon"
-                                 uk-img>
+                            <img data-src="{% static 'images/footer-fb-icon.svg' %}" width="14" height="14" alt="icon" uk-img>
                         </a>
                     </li>
                 </ul>
@@ -833,7 +805,7 @@
             position: {lat: 42.8420436, lng: 74.623389},
             map: map,
             title: 'Art Clinic',
-            icon: '{% static "images/location.svg" %}'
+            icon: '{% static 'images/location.svg' %}'
         });
     }
 
