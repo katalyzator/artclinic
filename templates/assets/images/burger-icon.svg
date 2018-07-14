@@ -1,0 +1,5 @@
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="1.5" y1="-1.5" x2="12.5" y2="-1.5" transform="translate(0 3)" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="1.5" y1="-1.5" x2="12.5" y2="-1.5" transform="translate(14 28)" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="1.5" y1="-1.5" x2="26.5" y2="-1.5" transform="translate(0 16)" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

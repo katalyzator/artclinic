@@ -7,604 +7,696 @@
     <title>Art Clinic</title>
     <link rel="stylesheet" href="{% static 'css/twentytwenty.css' %}">
     <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
-    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+    <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu:400,500,700&amp;subset=cyrillic,cyrillic-ext"
           rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body id="home">
 
-<header uk-sticky>
-    <div class="uk-container">
-        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+<div class="uk-offcanvas-content">
 
-            <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo" href="#home">
-                    <img src="{% static 'images/fixed-header-logotype.svg' %}" class="fixed-logo" alt="logotype">
+    <header uk-sticky>
+        <div class="uk-container">
+            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+
+                <div class="uk-navbar-left">
+                    <a href="#offcanvas-push" class="burger" uk-toggle>
+                        <div class="wrapper-menu">
+                            <div class="line-menu half start"></div>
+                            <div class="line-menu"></div>
+                            <div class="line-menu half end"></div>
+                        </div>
+                    </a>
+                    <a class="uk-navbar-item uk-logo" href="#home">
+                        <img src="{% static 'images/fixed-header-logotype.svg' %}" class="fixed-logo" alt="logotype">
+                    </a>
+                    <a href="#" class="mobile-icon">
+                        <img src="{% static 'images/mobile-phone-icon.svg' %}" alt="phone icon">
+                    </a>
+                </div>
+
+                <div class="uk-navbar-right">
+
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a href="#sales">Акции</a>
+                        </li>
+                        <li>
+                            <a href="#about">О нас</a>
+                        </li>
+                        <li>
+                            <a href="#services">Услуги</a>
+                        </li>
+                        <li>
+                            <a href="#specialists">Специалисты</a>
+                        </li>
+                        <li>
+                            <a href="#our-works">Наши работы</a>
+                        </li>
+                        <li>
+                            <a href="#contacts">Контакты</a>
+                        </li>
+                    </ul>
+
+                    <ul class="uk-navbar-item social">
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'images/phone-icon.svg' %}" alt="phone-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'images/instagram-icon.svg' %}" alt="instagram-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'images/fb-icon.png' %}" alt="fb-icon">
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <div class="uk-section uk-section-default main-section">
+        <div class="uk-container">
+            <div class="introduction-block">
+                <a href="#" class="logotype">
+                    <img src="{% static 'images/logotype.svg' %}" alt="logotype">
                 </a>
-            </div>
+                <span class="line"></span>
 
-            <div class="uk-navbar-right">
+                <p>Разнообразный и богатый опыт укрепление и развитие структуры играет важную роль. //Девиз: “Мы творим
+                    красоту”. Текст уместить на 3-4 строки, не больше.</p>
 
-                <ul class="uk-navbar-nav">
-                    <li>
-                        <a href="#sales">Акции</a>
-                    </li>
-                    <li>
-                        <a href="#about">О нас</a>
-                    </li>
-                    <li>
-                        <a href="#services">Услуги</a>
-                    </li>
-                    <li>
-                        <a href="#specialists">Специалисты</a>
-                    </li>
-                    <li>
-                        <a href="#our-works">Наши работы</a>
-                    </li>
-                    <li>
-                        <a href="#contacts">Контакты</a>
-                    </li>
-                </ul>
-
-                <ul class="uk-navbar-item social">
-                    <li>
-                        <a href="#">
-                            <img src="{% static 'images/phone-icon.svg' %}" alt="phone-icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{% static 'images/instagram-icon.svg' %}" alt="instagram-icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{% static 'images/fb-icon.png' %}" alt="fb-icon">
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
-    </div>
-</header>
-
-<div class="uk-section uk-section-default main-section">
-    <div class="uk-container">
-        <div class="introduction-block">
-            <a href="#" class="logotype">
-                <img src="{% static 'images/logotype.svg' %}" alt="logotype">
-            </a>
-            <span class="line"></span>
-
-            <p>Разнообразный и богатый опыт укрепление и развитие структуры играет важную роль. //Девиз: “Мы творим
-                красоту”. Текст уместить на 3-4 строки, не больше.</p>
-
-            <div class="bordered-button typical-button">
-                <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на прием
-                </button>
+                <div class="bordered-button typical-button">
+                    <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на
+                        прием
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="uk-container uk-container-expand" id="sales">
-        <div class="uk-child-width-1-3" uk-grid uk-height-match>
-            <div>
-                <div class="offers-container uk-height-1-1">
-                    <div class="offers-content uk-height-1-1">
-                        <div class="uk-height-1-1">
-                            <div class="section-title">
-                                <h4>Актуальные предложения</h4>
+        <div class="uk-container uk-container-expand" id="sales">
+            <div class="uk-flex-center@m" uk-grid uk-height-match>
+                <div class="uk-width-1-3@l uk-visible@m" uk-scrollspy="cls: uk-animation-slide-left;">
+                    <div class="offers-container uk-height-1-1">
+                        <div class="offers-content uk-height-1-1">
+                            <div class="uk-height-1-1">
+                                <div class="title-underline">
+                                    <h4><span><span>Актуальные</span></span> <span><span>предложения</span></span></h4>
+                                </div>
+                                <p>тут какой-нибудь текст типа у нас всегда акции всё збс подписывайтесь ставьте
+                                    лайки</p>
                             </div>
-                            <p>тут какой-нибудь текст типа у нас всегда акции всё збс подписывайтесь ставьте лайки</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <div class="uk-height-1-1 sale-slider" uk-slideshow>
+                <div class="uk-width-1-1@s uk-width-1-2@m uk-width-1-3@l" uk-scrollspy="cls: uk-animation-scale-up;">
+                    <div class="uk-height-1-1 sale-slider" uk-slideshow>
 
-                    <div class="uk-position-relative uk-height-1-1">
+                        <div class="uk-position-relative uk-height-1-1">
 
-                        <ul class="uk-slideshow-items">
-                            {% for item in actions %}
-                                <li>
+                            <ul class="uk-slideshow-items">
+                                <li class="uk-height-1-1">
                                     <div class="sale-card uk-height-1-1">
                                         <div class="section-title">
                                             <h4>АКЦИЯ</h4>
                                         </div>
                                         <span class="line"></span>
 
-                                        <p>{{ item.description }}</p>
+                                        <p>с 1 по 20 июля скидка 20% на блефаропластику!
+                                            //ограничение по количеству строк - 5</p>
                                     </div>
                                 </li>
-                            {% endfor %}
-                        </ul>
+                                <li class="uk-height-1-1">
+                                    <div class="sale-card uk-height-1-1">
+                                        <div class="section-title">
+                                            <h4>АКЦИЯ</h4>
+                                        </div>
+                                        <span class="line"></span>
 
-                        <a class="uk-position-bottom-left uk-position-small uk-hidden-hover" href="#"
-                           uk-slidenav-previous uk-slideshow-item="previous"></a>
-                        <a class="uk-position-bottom-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
-                           uk-slideshow-item="next"></a>
+                                        <p>с 1 по 20 июля скидка 20% на блефаропластику!
+                                            //ограничение по количеству строк - 5</p>
+                                    </div>
+                                </li>
+                                <li class="uk-height-1-1">
+                                    <div class="sale-card uk-height-1-1">
+                                        <div class="section-title">
+                                            <h4>АКЦИЯ</h4>
+                                        </div>
+                                        <span class="line"></span>
+
+                                        <p>с 1 по 20 июля скидка 20% на блефаропластику!
+                                            //ограничение по количеству строк - 5</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <a class="uk-position-bottom-left uk-position-small uk-hidden-hover" href="#"
+                               uk-slidenav-previous uk-slideshow-item="previous"></a>
+                            <a class="uk-position-bottom-right uk-position-small uk-hidden-hover" href="#"
+                               uk-slidenav-next
+                               uk-slideshow-item="next"></a>
+
+                        </div>
+
+                        <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
 
                     </div>
+                </div>
+                <div class="uk-width-1-1@s uk-width-1-2@m uk-width-1-3@l" uk-scrollspy="cls: uk-animation-slide-right;">
+                    <div class="sales-container uk-height-1-1">
+                        <div class="sales-content uk-height-1-1">
+                            <div class="uk-height-1-1">
+                                <div class="title-underline">
+                                    <h4><span><span>Ждете</span></span> <span><span>подходящую</span></span>
+                                        <span><span>акцию?</span></span></h4>
+                                </div>
+                                <p>Подпишитесь и будьте всегда в курсе самых выгодных предложений!</p>
 
-                    <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
-
+                                <form>
+                                    <input class="uk-input" type="text" placeholder="E-MAIL">
+                                    <button class="uk-button uk-button-default">ПОДПИСАТЬСЯ</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="sales-container uk-height-1-1">
-                    <div class="sales-content uk-height-1-1">
-                        <div class="uk-height-1-1">
+        </div>
+    </div>
+
+    <div class="uk-section uk-section-default about-section" id="about">
+        <div class="uk-container">
+            <div class="uk-grid-large" uk-grid>
+                <div class="uk-width-1-1@s uk-width-1-3@m uk-width-1-3@l">
+                    <div class="about-us">
+                        <div class="section-title">
+                            <h4>О нашей клинике</h4>
+                        </div>
+
+                        <p>Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по
+                            разработке системы обучения кадров, соответствует насущным потребностям.</p>
+                        <p>Равным образом укрепление и развитие структуры способствует подготовке и реализации системы
+                            обучения кадров, соответствует насущным потребностям. Таким образом консультация с широким
+                            активом требуют уточнения форм развития.</p>
+                    </div>
+                </div>
+                <div class="uk-width-1-1@s uk-width-2-3@m uk-width-2-3@l">
+                    <div class="gallery-slider">
+                        <div class="uk-position-relative"
+                             uk-slideshow="min-height: 300; max-height: 420; animation: push">
+
+                            <ul class="uk-slideshow-items">
+                                <li>
+                                    <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
+                                </li>
+                                <li>
+                                    <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
+                                </li>
+                                <li>
+                                    <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
+                                </li>
+                            </ul>
+
+                            <a class="uk-position-center-left-out uk-hidden-hover" href="#" uk-slidenav-previous
+                               uk-slideshow-item="previous"></a>
+                            <a class="uk-position-center-right-out uk-hidden-hover" href="#" uk-slidenav-next
+                               uk-slideshow-item="next"></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section uk-section-default category-section uk-visible@s" id="services">
+        <div class="uk-container">
+            <div uk-filter="target: .js-filter">
+                <div class="uk-grid-small" uk-grid uk-scrollspy="cls: uk-animation-scale-down; repeat: true">
+                    <div class="uk-width-1-3">
+                        <div class="uk-inline body-image">
+                            <img src="{% static 'images/body.png' %}" alt="body image">
+                            <a class="uk-position-absolute uk-transform-center uk-active" style="left: 28%; top: 12%"
+                               href="#"
+                               uk-marker uk-filter-control="[data-body='face']"></a>
+                            <a class="uk-position-absolute uk-transform-center" style="left: 55%; top: 15%" href="#"
+                               uk-marker uk-filter-control="[data-body='arm']"></a>
+                            <a class="uk-position-absolute uk-transform-center" style="left: 48%; top: 25%" href="#"
+                               uk-marker uk-filter-control="[data-body='chest']"></a>
+                            <a class="uk-position-absolute uk-transform-center" style="left: 53%; top: 38%" href="#"
+                               uk-marker uk-filter-control="[data-body='hip']"></a>
+                            <a class="uk-position-absolute uk-transform-center" style="left: 36%; top: 45%" href="#"
+                               uk-marker uk-filter-control="[data-body='pussy']"></a>
+                            <a class="uk-position-absolute uk-transform-center" style="left: 48%; top: 58%" href="#"
+                               uk-marker uk-filter-control="[data-body='legs']"></a>
+                        </div>
+                    </div>
+                    <div class="uk-width-2-3 category-container">
+                        <div class="uk-width-1-2 section-title">
+                            <h4>Что вы хотите изменить?</h4>
+                        </div>
+                        <div class="js-filter">
+                            <div class="category-block" data-body="face">
+                                <h3>Лицо</h3>
+
+                                <ul class="uk-list uk-list-bullet uk-child-width-1-2">
+                                    <li uk-toggle="target: #modal-center">Блефаропластика</li>
+                                    <li uk-toggle="target: #modal-center">Эпикантопластика</li>
+                                    <li uk-toggle="target: #modal-center">Послеоперационная коррекция</li>
+                                    <li uk-toggle="target: #modal-center">Коррекция птоза</li>
+                                    <li uk-toggle="target: #modal-center">Подтяжка бровей (броулифтинг)</li>
+                                    <li uk-toggle="target: #modal-center">Фейслифтинг (хирургическая подтяжка лица)</li>
+                                    <li uk-toggle="target: #modal-center">Удаление жировых комочков Биша</li>
+                                    <li uk-toggle="target: #modal-center">Оптопластика</li>
+                                    <li uk-toggle="target: #modal-center">Удаление кожных образований (бородавки,
+                                        родинки,
+                                        полипы, невусы)
+                                    </li>
+                                    <li uk-toggle="target: #modal-center">Фронтлифтинг (лоб)</li>
+                                    <li uk-toggle="target: #modal-center">Хейлопластика (булхорн)</li>
+                                </ul>
+                            </div>
+
+                            <div class="category-block" data-body="arm">
+                                <h3>Рука</h3>
+
+                                <ul class="uk-list uk-list-bullet uk-child-width-1-2">
+                                    <li uk-toggle="target: #modal-center">List item 1</li>
+                                    <li uk-toggle="target: #modal-center">List item 2</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                </ul>
+                            </div>
+
+                            <div class="category-block" data-body="chest">
+                                <h3>Грудь</h3>
+
+                                <ul class="uk-list uk-list-bullet uk-child-width-1-2">
+                                    <li uk-toggle="target: #modal-center">List item 1</li>
+                                    <li uk-toggle="target: #modal-center">List item 2</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                </ul>
+                            </div>
+
+                            <div class="category-block" data-body="hip">
+                                <h3>Бедро</h3>
+
+                                <ul class="uk-list uk-list-bullet uk-child-width-1-2">
+                                    <li uk-toggle="target: #modal-center">List item 1</li>
+                                    <li uk-toggle="target: #modal-center">List item 2</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                </ul>
+                            </div>
+
+                            <div class="category-block" data-body="pussy">
+                                <h3>Pussy</h3>
+
+                                <ul class="uk-list uk-list-bullet uk-child-width-1-2">
+                                    <li uk-toggle="target: #modal-center">List item 1</li>
+                                    <li uk-toggle="target: #modal-center">List item 2</li>
+                                    <li uk-toggle="target: #modal-center">List item 2</li>
+                                    <li uk-toggle="target: #modal-center">List item 2</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                </ul>
+                            </div>
+
+                            <div class="category-block" data-body="legs">
+                                <h3>Ноги</h3>
+
+                                <ul class="uk-list uk-list-bullet uk-child-width-1-2">
+                                    <li uk-toggle="target: #modal-center">List item 1</li>
+                                    <li uk-toggle="target: #modal-center">List item 2</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a class="uk-link-text all-services-link" href="#all-services">Посмотреть весь список услуг</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section uk-section-default services-section" id="all-services">
+        <div class="uk-container">
+            <div class="all-services-container">
+                <img data-src="images/lines.svg" class="lines uk-visible@l" width="100" height="40"
+                     alt="head image" uk-img>
+                <p>Наша клиника предоставляет следующие услуги в области <br> хирургии и косметологии:</p>
+
+                <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-2@m uk-child-width-1-2@l uk-grid-large"
+                     uk-grid>
+                    <div>
+                        <div class="all-services first-column">
                             <div class="section-title">
-                                <h4>Ждете подходящую акцию?</h4>
+                                <h4>Косметология</h4>
                             </div>
-                            <p>Подпишитесь и будьте всегда в курсе самых выгодных предложений!</p>
 
-                            <form>
-                                <input class="uk-input" type="text" placeholder="E-MAIL">
-                                <button class="uk-button uk-button-default">ПОДПИСАТЬСЯ</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="uk-section uk-section-default about-section" id="about">
-    <div class="uk-container">
-        <div class="uk-grid-large" uk-grid>
-            <div class="uk-width-1-3">
-                <div class="about-us">
-                    <div class="section-title">
-                        <h4>О нашей клинике</h4>
-                    </div>
-
-                    <p>Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по
-                        разработке системы обучения кадров, соответствует насущным потребностям.</p>
-                    <p>Равным образом укрепление и развитие структуры способствует подготовке и реализации системы
-                        обучения кадров, соответствует насущным потребностям. Таким образом консультация с широким
-                        активом требуют уточнения форм развития.</p>
-                </div>
-            </div>
-            <div class="uk-width-2-3">
-                <div class="gallery-slider">
-                    <div class="uk-position-relative" uk-slideshow="min-height: 300; max-height: 420; animation: push">
-
-                        <ul class="uk-slideshow-items">
-                            <li>
-                                <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
-                            </li>
-                            <li>
-                                <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
-                            </li>
-                            <li>
-                                <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
-                            </li>
-                        </ul>
-
-                        <a class="uk-position-center-left-out uk-hidden-hover" href="#" uk-slidenav-previous
-                           uk-slideshow-item="previous"></a>
-                        <a class="uk-position-center-right-out uk-hidden-hover" href="#" uk-slidenav-next
-                           uk-slideshow-item="next"></a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="uk-section uk-section-default category-section" id="services">
-    <div class="uk-container">
-        <div uk-filter="target: .js-filter">
-            <div class="uk-grid-small" uk-grid>
-                <div class="uk-width-1-3">
-                    <div class="uk-inline body-image">
-                        <img src="{% static 'images/body.png' %}" alt="body image">
-                        <a class="uk-position-absolute uk-transform-center uk-active" style="left: 28%; top: 12%"
-                           href="#"
-                           uk-marker uk-filter-control="[data-body='face']"></a>
-                        <a class="uk-position-absolute uk-transform-center" style="left: 55%; top: 15%" href="#"
-                           uk-marker uk-filter-control="[data-body='arm']"></a>
-                        <a class="uk-position-absolute uk-transform-center" style="left: 48%; top: 25%" href="#"
-                           uk-marker uk-filter-control="[data-body='chest']"></a>
-                        <a class="uk-position-absolute uk-transform-center" style="left: 53%; top: 38%" href="#"
-                           uk-marker uk-filter-control="[data-body='hip']"></a>
-                        <a class="uk-position-absolute uk-transform-center" style="left: 36%; top: 45%" href="#"
-                           uk-marker uk-filter-control="[data-body='pussy']"></a>
-                        <a class="uk-position-absolute uk-transform-center" style="left: 48%; top: 58%" href="#"
-                           uk-marker uk-filter-control="[data-body='legs']"></a>
-                    </div>
-                </div>
-                <div class="uk-width-2-3 category-container">
-                    <div class="uk-width-1-2 section-title">
-                        <h4>Что вы хотите изменить?</h4>
-                    </div>
-                    <div class="js-filter">
-                        <div class="category-block" data-body="face">
-                            <h3>Лицо</h3>
-
-                            <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                <li uk-toggle="target: #modal-center">Блефаропластика</li>
-                                <li uk-toggle="target: #modal-center">Эпикантопластика</li>
-                                <li uk-toggle="target: #modal-center">Послеоперационная коррекция</li>
-                                <li uk-toggle="target: #modal-center">Коррекция птоза</li>
-                                <li uk-toggle="target: #modal-center">Подтяжка бровей (броулифтинг)</li>
-                                <li uk-toggle="target: #modal-center">Фейслифтинг (хирургическая подтяжка лица)</li>
-                                <li uk-toggle="target: #modal-center">Удаление жировых комочков Биша</li>
-                                <li uk-toggle="target: #modal-center">Оптопластика</li>
-                                <li uk-toggle="target: #modal-center">Удаление кожных образований (бородавки, родинки,
-                                    полипы, невусы)
+                            <ul class="uk-list uk-list-bullet">
+                                <li uk-toggle="target: #modal-center">//весь список косметологических услуг</li>
+                                <li uk-toggle="target: #modal-center">Верхняя (возрастная/европеизация)</li>
+                                <li uk-toggle="target: #modal-center">Нижняя</li>
+                                <li uk-toggle="target: #modal-center">круговая</li>
+                                <li uk-toggle="target: #modal-center">эпикантопластика</li>
+                                <li uk-toggle="target: #modal-center">послеоперационная коррекция</li>
+                                <li uk-toggle="target: #modal-center">коррекция птоза</li>
+                                <li uk-toggle="target: #modal-center">подтяжка бровей (броулифтинг)</li>
+                                <li uk-toggle="target: #modal-center">Маммопластика (грудь)</li>
+                                <li uk-toggle="target: #modal-center">уменьшение (мастопексия)</li>
+                                <li uk-toggle="target: #modal-center">устранение ассиметрии</li>
+                                <li uk-toggle="target: #modal-center">гинекомастия (липосакция)</li>
+                                <li uk-toggle="target: #modal-center">Отопластика (уши)</li>
+                                <li uk-toggle="target: #modal-center">оттопыренность (коррекция лопоухости)</li>
+                                <li uk-toggle="target: #modal-center">уменьшение ушных раковин</li>
+                                <li uk-toggle="target: #modal-center">уменьшение мочки (двух мочек)</li>
+                                <li uk-toggle="target: #modal-center">реконструкция (пластика) мочки (двух мочек)</li>
+                                <li uk-toggle="target: #modal-center">коррекция травматических дефектов ушной раковины
                                 </li>
-                                <li uk-toggle="target: #modal-center">Фронтлифтинг (лоб)</li>
-                                <li uk-toggle="target: #modal-center">Хейлопластика (булхорн)</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-block" data-body="arm">
-                            <h3>Рука</h3>
-
-                            <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                <li uk-toggle="target: #modal-center">List item 1</li>
-                                <li uk-toggle="target: #modal-center">List item 2</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-block" data-body="chest">
-                            <h3>Грудь</h3>
-
-                            <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                <li uk-toggle="target: #modal-center">List item 1</li>
-                                <li uk-toggle="target: #modal-center">List item 2</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-block" data-body="hip">
-                            <h3>Бедро</h3>
-
-                            <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                <li uk-toggle="target: #modal-center">List item 1</li>
-                                <li uk-toggle="target: #modal-center">List item 2</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-block" data-body="pussy">
-                            <h3>Pussy</h3>
-
-                            <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                <li uk-toggle="target: #modal-center">List item 1</li>
-                                <li uk-toggle="target: #modal-center">List item 2</li>
-                                <li uk-toggle="target: #modal-center">List item 2</li>
-                                <li uk-toggle="target: #modal-center">List item 2</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-block" data-body="legs">
-                            <h3>Ноги</h3>
-
-                            <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                <li uk-toggle="target: #modal-center">List item 1</li>
-                                <li uk-toggle="target: #modal-center">List item 2</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
-                                <li uk-toggle="target: #modal-center">List item 3</li>
                             </ul>
                         </div>
                     </div>
-                    <a class="uk-link-text all-services-link" href="#all-services">Посмотреть весь список услуг</a>
+                    <div>
+                        <div class="all-services second-column">
+                            <div class="section-title">
+                                <h4>Хирургия</h4>
+                            </div>
+
+                            <ul class="uk-list uk-list-bullet">
+                                <li uk-toggle="target: #modal-center">//весь список косметологических услуг</li>
+                                <li uk-toggle="target: #modal-center">мини - абдоминопластика, без формирования пупка
+                                </li>
+                                <li uk-toggle="target: #modal-center">Липосакция водоструйная/механическая (живот, бока,
+                                    бедра, плечи, спина)
+                                </li>
+                                <li uk-toggle="target: #modal-center">Липофиллинг</li>
+                                <li uk-toggle="target: #modal-center">груди, ягодицы, голени, кистей</li>
+                                <li uk-toggle="target: #modal-center">Фейслифтинг (хирургическая подтяжка лица)</li>
+                                <li uk-toggle="target: #modal-center">круговая подтяжка со SMAS</li>
+                                <li uk-toggle="target: #modal-center">круговая подтяжка без SMAS</li>
+                                <li uk-toggle="target: #modal-center">фронтлифтинг (лоб)</li>
+                                <li uk-toggle="target: #modal-center">хейлопластика (булхорн)</li>
+                                <li uk-toggle="target: #modal-center">удаление жировых комков щёчной области (Биша)</li>
+                                <li uk-toggle="target: #modal-center">Пластика (коррекция) рубцов</li>
+                                <li uk-toggle="target: #modal-center">Хирургическое лечение гипергидроза (повышенного
+                                    потоотделения)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
+                <img data-src="images/head.png" class="head uk-visible@l" width="230" height="320"
+                     alt="head image" uk-img>
             </div>
         </div>
     </div>
-</div>
 
-<div class="uk-section uk-section-default services-section" id="all-services">
-    <div class="uk-container">
-        <div class="all-services-container">
-            <p>Наша клиника предоставляет следующие услуги в области <br> хирургии и косметологии:</p>
+    <div class="uk-section uk-section-default specialists-section" id="specialists">
+        <div class="uk-container">
+            <div class="section-title">
+                <h4>Наши специалисты</h4>
+            </div>
 
-            <div class="uk-child-width-1-2 uk-grid-large" uk-grid>
-                <div>
-                    <div class="all-services first-column">
-                        <div class="section-title">
-                            <h4>Косметология</h4>
-                        </div>
+            <div class="specialists-slider" uk-slider>
 
-                        <ul class="uk-list uk-list-bullet">
-                            <li uk-toggle="target: #modal-center">//весь список косметологических услуг</li>
-                            <li uk-toggle="target: #modal-center">Верхняя (возрастная/европеизация)</li>
-                            <li uk-toggle="target: #modal-center">Нижняя</li>
-                            <li uk-toggle="target: #modal-center">круговая</li>
-                            <li uk-toggle="target: #modal-center">эпикантопластика</li>
-                            <li uk-toggle="target: #modal-center">послеоперационная коррекция</li>
-                            <li uk-toggle="target: #modal-center">коррекция птоза</li>
-                            <li uk-toggle="target: #modal-center">подтяжка бровей (броулифтинг)</li>
-                            <li uk-toggle="target: #modal-center">Маммопластика (грудь)</li>
-                            <li uk-toggle="target: #modal-center">уменьшение (мастопексия)</li>
-                            <li uk-toggle="target: #modal-center">устранение ассиметрии</li>
-                            <li uk-toggle="target: #modal-center">гинекомастия (липосакция)</li>
-                            <li uk-toggle="target: #modal-center">Отопластика (уши)</li>
-                            <li uk-toggle="target: #modal-center">оттопыренность (коррекция лопоухости)</li>
-                            <li uk-toggle="target: #modal-center">уменьшение ушных раковин</li>
-                            <li uk-toggle="target: #modal-center">уменьшение мочки (двух мочек)</li>
-                            <li uk-toggle="target: #modal-center">реконструкция (пластика) мочки (двух мочек)</li>
-                            <li uk-toggle="target: #modal-center">коррекция травматических дефектов ушной раковины</li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="all-services second-column">
-                        <div class="section-title">
-                            <h4>Хирургия</h4>
-                        </div>
+                <div class="uk-position-relative">
 
-                        <ul class="uk-list uk-list-bullet">
-                            <li uk-toggle="target: #modal-center">//весь список косметологических услуг</li>
-                            <li uk-toggle="target: #modal-center">мини - абдоминопластика, без формирования пупка</li>
-                            <li uk-toggle="target: #modal-center">Липосакция водоструйная/механическая (живот, бока,
-                                бедра, плечи, спина)
+                    <div class="uk-slider-container">
+                        <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-3@l uk-grid uk-grid-large">
+                            <li>
+                                <div class="specialist-card">
+                                    <div class="image-wrap">
+                                        <div class="uk-inline uk-light">
+                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
+                                                 width="250"
+                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                                            <div class="image-border"></div>
+                                            <a class="uk-position-absolute uk-transform-center"
+                                               style="left: 85%; top: 85%"
+                                               href="#employer-modal" uk-marker uk-toggle></a>
+                                        </div>
+                                    </div>
+                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
+                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
+                                </div>
                             </li>
-                            <li uk-toggle="target: #modal-center">Липофиллинг</li>
-                            <li uk-toggle="target: #modal-center">груди, ягодицы, голени, кистей</li>
-                            <li uk-toggle="target: #modal-center">Фейслифтинг (хирургическая подтяжка лица)</li>
-                            <li uk-toggle="target: #modal-center">круговая подтяжка со SMAS</li>
-                            <li uk-toggle="target: #modal-center">круговая подтяжка без SMAS</li>
-                            <li uk-toggle="target: #modal-center">фронтлифтинг (лоб)</li>
-                            <li uk-toggle="target: #modal-center">хейлопластика (булхорн)</li>
-                            <li uk-toggle="target: #modal-center">удаление жировых комков щёчной области (Биша)</li>
-                            <li uk-toggle="target: #modal-center">Пластика (коррекция) рубцов</li>
-                            <li uk-toggle="target: #modal-center">Хирургическое лечение гипергидроза (повышенного
-                                потоотделения)
+                            <li>
+                                <div class="specialist-card">
+                                    <div class="image-wrap">
+                                        <div class="uk-inline uk-light">
+                                            <img data-src="{% static 'images/doc2.jpg' %}" class="uk-border-circle"
+                                                 width="250"
+                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                                            <div class="image-border"></div>
+                                            <a class="uk-position-absolute uk-transform-center"
+                                               style="left: 85%; top: 85%"
+                                               href="#employer-modal" uk-marker uk-toggle></a>
+                                        </div>
+                                    </div>
+                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
+                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="specialist-card">
+                                    <div class="image-wrap">
+                                        <div class="uk-inline uk-light">
+                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
+                                                 width="250"
+                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                                            <div class="image-border"></div>
+                                            <a class="uk-position-absolute uk-transform-center"
+                                               style="left: 85%; top: 85%"
+                                               href="#employer-modal" uk-marker uk-toggle></a>
+                                        </div>
+                                    </div>
+                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
+                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="specialist-card">
+                                    <div class="image-wrap">
+                                        <div class="uk-inline uk-light">
+                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
+                                                 width="250"
+                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                                            <div class="image-border"></div>
+                                            <a class="uk-position-absolute uk-transform-center"
+                                               style="left: 85%; top: 85%"
+                                               href="#employer-modal" uk-marker uk-toggle></a>
+                                        </div>
+                                    </div>
+                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
+                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="specialist-card">
+                                    <div class="image-wrap">
+                                        <div class="uk-inline uk-light">
+                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
+                                                 width="250"
+                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                                            <div class="image-border"></div>
+                                            <a class="uk-position-absolute uk-transform-center"
+                                               style="left: 85%; top: 85%"
+                                               href="#employer-modal" uk-marker uk-toggle></a>
+                                        </div>
+                                    </div>
+                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
+                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
+
+                    <!--<div class="uk-hidden@s uk-light">-->
+                    <!--<a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous-->
+                    <!--uk-slider-item="previous"></a>-->
+                    <!--<a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next-->
+                    <!--uk-slider-item="next"></a>-->
+                    <!--</div>-->
+
+                    <div>
+                        <a class="uk-position-center-left-out" href="#" uk-slidenav-previous
+                           uk-slider-item="previous"></a>
+                        <a class="uk-position-center-right-out" href="#" uk-slidenav-next
+                           uk-slider-item="next"></a>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     </div>
-</div>
 
-<div class="uk-section uk-section-default specialists-section" id="specialists">
-    <div class="uk-container">
-        <div class="section-title">
-            <h4>Наши специалисты</h4>
-        </div>
-
-        <div class="specialists-slider" uk-slider>
-
-            <div class="uk-position-relative">
-
-                <div class="uk-slider-container">
-                    <ul class="uk-slider-items uk-child-width-1-3 uk-grid uk-grid-large">
-                        <li>
-                            <div class="specialist-card">
-                                <div class="image-wrap">
-                                    <div class="uk-inline uk-light">
-                                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
-                                             width="250"
-                                             height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                        <div class="image-border"></div>
-                                        <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
-                                           href="#employer-modal" uk-marker uk-toggle></a>
-                                    </div>
-                                </div>
-                                <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="specialist-card">
-                                <div class="image-wrap">
-                                    <div class="uk-inline uk-light">
-                                        <img data-src="{% static 'images/about-us-img.jpg' %}" class="uk-border-circle"
-                                             width="250"
-                                             height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                        <div class="image-border"></div>
-                                        <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
-                                           href="#employer-modal" uk-marker uk-toggle></a>
-                                    </div>
-                                </div>
-                                <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="specialist-card">
-                                <div class="image-wrap">
-                                    <div class="uk-inline uk-light">
-                                        <img data-src="images/doc1.jpg" class="uk-border-circle" width="250"
-                                             height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                        <div class="image-border"></div>
-                                        <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
-                                           href="#employer-modal" uk-marker uk-toggle></a>
-                                    </div>
-                                </div>
-                                <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="specialist-card">
-                                <div class="image-wrap">
-                                    <div class="uk-inline uk-light">
-                                        <img data-src="images/doc1.jpg" class="uk-border-circle" width="250"
-                                             height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                        <div class="image-border"></div>
-                                        <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
-                                           href="#employer-modal" uk-marker uk-toggle></a>
-                                    </div>
-                                </div>
-                                <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="specialist-card">
-                                <div class="image-wrap">
-                                    <div class="uk-inline uk-light">
-                                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle"
-                                             width="250"
-                                             height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                        <div class="image-border"></div>
-                                        <a class="uk-position-absolute uk-transform-center" style="left: 85%; top: 85%"
-                                           href="#employer-modal" uk-marker uk-toggle></a>
-                                    </div>
-                                </div>
-                                <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="uk-hidden@s uk-light">
-                    <a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous
-                       uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next
-                       uk-slider-item="next"></a>
-                </div>
-
-                <div class="uk-visible@s">
-                    <a class="uk-position-center-left-out uk-position-small" href="#" uk-slidenav-previous
-                       uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right-out uk-position-small" href="#" uk-slidenav-next
-                       uk-slider-item="next"></a>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="uk-section uk-section-default works-section" id="our-works">
-    <div class="uk-container">
-        <div class="examples-block">
-            <ul class="work-type uk-list">
-                <li class="active-type" data-type="0">Блефаропластика <span class="line"></span></li>
-                <li data-type="1">Блефаропластика <span class="line"></span></li>
-                <li data-type="2">Блефаропластика <span class="line"></span></li>
-            </ul>
+    <div class="uk-section uk-section-default works-section" id="our-works">
+        <div class="uk-container">
+            <div class="examples-block" uk-scrollspy="cls: uk-animation-fade; repeat: true">
+                <ul class="work-type uk-list uk-visible@m">
+                    <li class="active-type" data-type="0">Блефаропластика <span class="line"></span></li>
+                    <li data-type="1">Блефаропластика <span class="line"></span></li>
+                    <li data-type="2">Блефаропластика <span class="line"></span></li>
+                </ul>
 
 
-            <div class="works-slider">
-                <div class="sl-slide">
-                    <div class="double-image twentytwenty-container">
-                        <!-- The before image is first -->
-                        <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
-                        <!-- The after image is last -->
-                        <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                <div class="works-slider">
+                    <div class="sl-slide">
+                        <div class="double-image twentytwenty-container">
+                            <!-- The before image is first -->
+                            <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
+                            <!-- The after image is last -->
+                            <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                        </div>
                     </div>
-                </div>
-                <div class="sl-slide">
-                    <div class="double-image twentytwenty-container">
-                        <!-- The before image is first -->
-                        <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
-                        <!-- The after image is last -->
-                        <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                    <div class="sl-slide">
+                        <div class="double-image twentytwenty-container">
+                            <!-- The before image is first -->
+                            <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
+                            <!-- The after image is last -->
+                            <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                        </div>
                     </div>
-                </div>
-                <div class="sl-slide">
-                    <div class="double-image twentytwenty-container">
-                        <!-- The before image is first -->
-                        <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
-                        <!-- The after image is last -->
-                        <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                    <div class="sl-slide">
+                        <div class="double-image twentytwenty-container">
+                            <!-- The before image is first -->
+                            <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
+                            <!-- The after image is last -->
+                            <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<footer>
-    <div class="uk-container">
-        <div class="map-wrapper" id="contacts">
-            <div class="contact-block">
-                <h4>Контакты</h4>
-                <span class="line"></span>
+    <footer>
+        <div class="uk-container">
+            <img data-src="{% static 'images/round.svg' %}" class="round uk-visible@l" width="145" height="95"
+                 alt="round image"
+                 uk-img>
 
-                <p>Ахунбаева, 21</p>
-                <p>+996 (312) 90-88-78<br>
-                    +996 (550) 90-88-78<br>
-                    +996 (705) 90-88-78
-                </p>
-                <p>пн - сб 10:00-20:00<br>
-                    вс - выходной</p>
+            <div class="map-wrapper" id="contacts">
+                <div class="contact-block">
+                    <h4>Контакты</h4>
+                    <span class="line"></span>
 
-                <div class="typical-button">
-                    <button class="uk-button uk-button-default">Записаться на прием</button>
+                    <p>Ахунбаева, 21</p>
+                    <p>+996 (312) 90-88-78<br>
+                        +996 (550) 90-88-78<br>
+                        +996 (705) 90-88-78
+                    </p>
+                    <p>пн - сб 10:00-20:00<br>
+                        вс - выходной</p>
+
+                    <div class="typical-button">
+                        <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на
+                            прием
+                        </button>
+                    </div>
                 </div>
+                <div id="map"></div>
             </div>
-            <div id="map"></div>
+
+            <div class="footer-navigation">
+                <img data-src="{% static 'images/footer-logotype.svg' %}" width="187" height="37" alt="icon" uk-img>
+
+                <ul class="uk-navbar-nav">
+                    <li><a href="#home">ARTclinic</a></li>
+                    <li><a href="#sales">Акции</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#specialists">Специалисты</a></li>
+                    <li><a href="#our-works">Наши работы</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+
+                <p>ARTclinic © 2018. Все права защищены</p>
+
+                <ul class="uk-navbar-item social">
+                    <li>
+                        <a href="#">
+                            <img data-src="{% static 'images/footer-phone-icon.svg' %}" width="14" height="14"
+                                 alt="icon"
+                                 uk-img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img data-src="{% static 'images/footer-instagram-icon.svg' %}" width="14" height="14"
+                                 alt="icon"
+                                 uk-img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img data-src="{% static 'images/footer-fb-icon.svg' %}" width="14" height="14" alt="icon"
+                                 uk-img>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </footer>
 
-        <div class="footer-navigation">
-            <img data-src="{% static 'images/footer-logotype.svg' %}" width="187" height="37" alt="icon" uk-img>
+    <div id="offcanvas-push" class="sidebar" uk-offcanvas="mode: push;">
+        <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+            <!--<button class="uk-offcanvas-close" type="button" uk-close></button>-->
 
-            <ul class="uk-navbar-nav">
-                <li><a href="#home">ARTclinic</a></li>
-                <li><a href="#sales">Акции</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#specialists">Специалисты</a></li>
-                <li><a href="#our-works">Наши работы</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-
-            <p>ARTclinic © 2018. Все права защищены</p>
-
-            <ul class="uk-navbar-item social">
-                <li>
-                    <a href="#">
-                        <img data-src="{% static 'images/footer-phone-icon.svg' %}" width="14" height="14" alt="icon"
-                             uk-img>
-                    </a>
+            <ul class="uk-nav">
+                <li class="uk-active">
+                    <a href="#sales">Акции</a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img data-src="{% static 'images/footer-instagram-icon.svg' %}" width="14" height="14"
-                             alt="icon"
-                             uk-img>
-                    </a>
+                    <a href="#about">О нас</a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img data-src="{% static 'images/footer-fb-icon.svg' %}" width="14" height="14" alt="icon"
-                             uk-img>
-                    </a>
+                    <a href="#all-services">Услуги</a>
+                </li>
+                <li>
+                    <a href="#our-works">Наши работы</a>
+                </li>
+                <li>
+                    <a href="#specialists">Специалисты</a>
+                </li>
+                <li>
+                    <a href="#contacts">Контакты</a>
                 </li>
             </ul>
+
         </div>
     </div>
-</footer>
+
+</div>
 
 <div id="modal-center" class="uk-flex-top service-modal" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
@@ -667,7 +759,7 @@
 
         <button class="uk-modal-close-default" type="button" uk-close="ratio: 2"></button>
 
-        <div class="uk-child-width-1-2" uk-grid>
+        <div class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-2@l" uk-grid>
             <div>
                 <div class="about-specialist">
                     <h4>Жумабаев Муктарбек Жумабаевич</h4>
@@ -690,7 +782,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class=" uk-visible@m">
                 <div class="specialist-image">
                     <div class="image-wrap">
                         <div class="uk-inline">
@@ -724,10 +816,10 @@
 </div>
 
 <script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'js/jquery.event.move.js' %}"></script>
-<script src="{% static 'js/jquery.twentytwenty.js' %}"></script>
 <script src="{% static 'js/uikit.min.js' %}"></script>
 <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+<script src="{% static 'js/jquery.event.move.js' %}"></script>
+<script src="{% static 'js/jquery.twentytwenty.js' %}"></script>
 <script src="{% static 'slick/slick.min.js' %}"></script>
 <script>
     function initMap() {
@@ -741,7 +833,7 @@
             position: {lat: 42.8420436, lng: 74.623389},
             map: map,
             title: 'Art Clinic',
-            icon: 'images/location.svg'
+            icon: '{% static "images/location.svg" %}'
         });
     }
 
@@ -790,6 +882,16 @@
                 }
 
             })
+        });
+
+        var wrapperMenu = $('.wrapper-menu');
+
+        wrapperMenu.on('click', function (event) {
+            wrapperMenu.toggleClass('open');
+        });
+
+        $('.sidebar .uk-nav > li > a').on('click', function () {
+            wrapperMenu.removeClass('open');
         });
     });
 </script>
