@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from main.models import Action, AboutImage, Specialist
+
+admin.site.site_header = 'Панель управления сайтом ArtClinic'
+
+admin.site.register(Action)
+admin.site.register(AboutImage)
+admin.site.register(Specialist)
