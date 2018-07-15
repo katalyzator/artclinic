@@ -195,15 +195,11 @@
                              uk-slideshow="min-height: 300; max-height: 420; animation: push">
 
                             <ul class="uk-slideshow-items">
-                                <li>
-                                    <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
-                                </li>
-                                <li>
-                                    <img src="{% static 'images/about-us-img.jpg' %}" alt="" uk-cover>
-                                </li>
-                                <li>
-                                    <img src="images/about-us-img.jpg" alt="" uk-cover>
-                                </li>
+                                {% for item in slider_images %}
+                                    <li>
+                                        <img src="{{ item.image.url }}" alt="" uk-cover>
+                                    </li>
+                                {% endfor %}
                             </ul>
 
                             <a class="uk-position-center-left-out uk-hidden-hover" href="#" uk-slidenav-previous
@@ -249,20 +245,11 @@
                                 <h3>Лицо</h3>
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                    <li uk-toggle="target: #modal-center">Блефаропластика</li>
-                                    <li uk-toggle="target: #modal-center">Эпикантопластика</li>
-                                    <li uk-toggle="target: #modal-center">Послеоперационная коррекция</li>
-                                    <li uk-toggle="target: #modal-center">Коррекция птоза</li>
-                                    <li uk-toggle="target: #modal-center">Подтяжка бровей (броулифтинг)</li>
-                                    <li uk-toggle="target: #modal-center">Фейслифтинг (хирургическая подтяжка лица)</li>
-                                    <li uk-toggle="target: #modal-center">Удаление жировых комочков Биша</li>
-                                    <li uk-toggle="target: #modal-center">Оптопластика</li>
-                                    <li uk-toggle="target: #modal-center">Удаление кожных образований (бородавки,
-                                        родинки,
-                                        полипы, невусы)
-                                    </li>
-                                    <li uk-toggle="target: #modal-center">Фронтлифтинг (лоб)</li>
-                                    <li uk-toggle="target: #modal-center">Хейлопластика (булхорн)</li>
+                                    {% for item in services %}
+                                        {% if item.service_type == 'face' %}
+                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
 
@@ -270,13 +257,11 @@
                                 <h3>Рука</h3>
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                    <li uk-toggle="target: #modal-center">List item 1</li>
-                                    <li uk-toggle="target: #modal-center">List item 2</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    {% for item in services %}
+                                        {% if item.service_type == 'hand' %}
+                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
 
@@ -284,13 +269,11 @@
                                 <h3>Грудь</h3>
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                    <li uk-toggle="target: #modal-center">List item 1</li>
-                                    <li uk-toggle="target: #modal-center">List item 2</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    {% for item in services %}
+                                        {% if item.service_type == 'chest' %}
+                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
 
@@ -298,13 +281,11 @@
                                 <h3>Бедро</h3>
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                    <li uk-toggle="target: #modal-center">List item 1</li>
-                                    <li uk-toggle="target: #modal-center">List item 2</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    {% for item in services %}
+                                        {% if item.service_type == 'hip' %}
+                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
 
@@ -312,15 +293,11 @@
                                 <h3>Pussy</h3>
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                    <li uk-toggle="target: #modal-center">List item 1</li>
-                                    <li uk-toggle="target: #modal-center">List item 2</li>
-                                    <li uk-toggle="target: #modal-center">List item 2</li>
-                                    <li uk-toggle="target: #modal-center">List item 2</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    {% for item in services %}
+                                        {% if item.service_type == 'pussy' %}
+                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
 
@@ -328,13 +305,11 @@
                                 <h3>Ноги</h3>
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
-                                    <li uk-toggle="target: #modal-center">List item 1</li>
-                                    <li uk-toggle="target: #modal-center">List item 2</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
-                                    <li uk-toggle="target: #modal-center">List item 3</li>
+                                    {% for item in services %}
+                                        {% if item.service_type == 'legs' %}
+                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -361,25 +336,11 @@
                             </div>
 
                             <ul class="uk-list uk-list-bullet">
-                                <li uk-toggle="target: #modal-center">//весь список косметологических услуг</li>
-                                <li uk-toggle="target: #modal-center">Верхняя (возрастная/европеизация)</li>
-                                <li uk-toggle="target: #modal-center">Нижняя</li>
-                                <li uk-toggle="target: #modal-center">круговая</li>
-                                <li uk-toggle="target: #modal-center">эпикантопластика</li>
-                                <li uk-toggle="target: #modal-center">послеоперационная коррекция</li>
-                                <li uk-toggle="target: #modal-center">коррекция птоза</li>
-                                <li uk-toggle="target: #modal-center">подтяжка бровей (броулифтинг)</li>
-                                <li uk-toggle="target: #modal-center">Маммопластика (грудь)</li>
-                                <li uk-toggle="target: #modal-center">уменьшение (мастопексия)</li>
-                                <li uk-toggle="target: #modal-center">устранение ассиметрии</li>
-                                <li uk-toggle="target: #modal-center">гинекомастия (липосакция)</li>
-                                <li uk-toggle="target: #modal-center">Отопластика (уши)</li>
-                                <li uk-toggle="target: #modal-center">оттопыренность (коррекция лопоухости)</li>
-                                <li uk-toggle="target: #modal-center">уменьшение ушных раковин</li>
-                                <li uk-toggle="target: #modal-center">уменьшение мочки (двух мочек)</li>
-                                <li uk-toggle="target: #modal-center">реконструкция (пластика) мочки (двух мочек)</li>
-                                <li uk-toggle="target: #modal-center">коррекция травматических дефектов ушной раковины
-                                </li>
+                                {% for item in services %}
+                                    {% if item.service_category == 'cosmetology' %}
+                                        <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -390,24 +351,11 @@
                             </div>
 
                             <ul class="uk-list uk-list-bullet">
-                                <li uk-toggle="target: #modal-center">//весь список косметологических услуг</li>
-                                <li uk-toggle="target: #modal-center">мини - абдоминопластика, без формирования пупка
-                                </li>
-                                <li uk-toggle="target: #modal-center">Липосакция водоструйная/механическая (живот, бока,
-                                    бедра, плечи, спина)
-                                </li>
-                                <li uk-toggle="target: #modal-center">Липофиллинг</li>
-                                <li uk-toggle="target: #modal-center">груди, ягодицы, голени, кистей</li>
-                                <li uk-toggle="target: #modal-center">Фейслифтинг (хирургическая подтяжка лица)</li>
-                                <li uk-toggle="target: #modal-center">круговая подтяжка со SMAS</li>
-                                <li uk-toggle="target: #modal-center">круговая подтяжка без SMAS</li>
-                                <li uk-toggle="target: #modal-center">фронтлифтинг (лоб)</li>
-                                <li uk-toggle="target: #modal-center">хейлопластика (булхорн)</li>
-                                <li uk-toggle="target: #modal-center">удаление жировых комков щёчной области (Биша)</li>
-                                <li uk-toggle="target: #modal-center">Пластика (коррекция) рубцов</li>
-                                <li uk-toggle="target: #modal-center">Хирургическое лечение гипергидроза (повышенного
-                                    потоотделения)
-                                </li>
+                                {% for item in services %}
+                                    {% if item.service_category == 'surgery' %}
+                                        <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -431,87 +379,26 @@
 
                     <div class="uk-slider-container">
                         <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-3@l uk-grid uk-grid-large">
-                            <li>
-                                <div class="specialist-card">
-                                    <div class="image-wrap">
-                                        <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
-                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                            <div class="image-border"></div>
-                                            <a class="uk-position-absolute uk-transform-center"
-                                               style="left: 85%; top: 85%"
-                                               href="#employer-modal" uk-marker uk-toggle></a>
+
+                            {% for item in specialists %}
+                                <li>
+                                    <div class="specialist-card">
+                                        <div class="image-wrap">
+                                            <div class="uk-inline uk-light">
+                                                <img data-src="{{ item.image.url }}" class="uk-border-circle"
+                                                     width="250"
+                                                     height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                                                <div class="image-border"></div>
+                                                <a class="uk-position-absolute uk-transform-center"
+                                                   style="left: 85%; top: 85%"
+                                                   href="#employer-modal" uk-marker uk-toggle></a>
+                                            </div>
                                         </div>
+                                        <h5>{{ item.full_name }}</h5>
+                                        <p>{{ item.description }}</p>
                                     </div>
-                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specialist-card">
-                                    <div class="image-wrap">
-                                        <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc2.jpg' %}" class="uk-border-circle"
-                                                 width="250"
-                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                            <div class="image-border"></div>
-                                            <a class="uk-position-absolute uk-transform-center"
-                                               style="left: 85%; top: 85%"
-                                               href="#employer-modal" uk-marker uk-toggle></a>
-                                        </div>
-                                    </div>
-                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specialist-card">
-                                    <div class="image-wrap">
-                                        <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
-                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                            <div class="image-border"></div>
-                                            <a class="uk-position-absolute uk-transform-center"
-                                               style="left: 85%; top: 85%"
-                                               href="#employer-modal" uk-marker uk-toggle></a>
-                                        </div>
-                                    </div>
-                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specialist-card">
-                                    <div class="image-wrap">
-                                        <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
-                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                            <div class="image-border"></div>
-                                            <a class="uk-position-absolute uk-transform-center"
-                                               style="left: 85%; top: 85%"
-                                               href="#employer-modal" uk-marker uk-toggle></a>
-                                        </div>
-                                    </div>
-                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specialist-card">
-                                    <div class="image-wrap">
-                                        <div class="uk-inline uk-light">
-                                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
-                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                            <div class="image-border"></div>
-                                            <a class="uk-position-absolute uk-transform-center"
-                                               style="left: 85%; top: 85%"
-                                               href="#employer-modal" uk-marker uk-toggle></a>
-                                        </div>
-                                    </div>
-                                    <h5>Жумабаев Муктарбек Жумабаевич</h5>
-                                    <p>Пластический хирург, лазерный хирург, главный врач клиники</p>
-                                </div>
-                            </li>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
 
@@ -577,7 +464,8 @@
 
     <footer>
         <div class="uk-container">
-            <img data-src="{% static 'images/round.svg' %}" class="round uk-visible@l" width="145" height="95" alt="round image"
+            <img data-src="{% static 'images/round.svg' %}" class="round uk-visible@l" width="145" height="95"
+                 alt="round image"
                  uk-img>
 
             <div class="map-wrapper" id="contacts">
@@ -620,19 +508,22 @@
                 <ul class="uk-navbar-item social">
                     <li>
                         <a href="#">
-                            <img data-src="{% static 'images/footer-phone-icon.svg' %}" width="14" height="14" alt="icon"
+                            <img data-src="{% static 'images/footer-phone-icon.svg' %}" width="14" height="14"
+                                 alt="icon"
                                  uk-img>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img data-src="{% static 'images/footer-instagram-icon.svg' %}" width="14" height="14" alt="icon"
+                            <img data-src="{% static 'images/footer-instagram-icon.svg' %}" width="14" height="14"
+                                 alt="icon"
                                  uk-img>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img data-src="{% static 'images/footer-fb-icon.svg' %}" width="14" height="14" alt="icon" uk-img>
+                            <img data-src="{% static 'images/footer-fb-icon.svg' %}" width="14" height="14" alt="icon"
+                                 uk-img>
                         </a>
                     </li>
                 </ul>
