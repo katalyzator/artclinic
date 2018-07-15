@@ -1,0 +1,58 @@
+<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+    <button class="uk-modal-close-default" type="button" uk-close="ratio: 2"></button>
+
+    <div class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-2@l" uk-grid>
+        <div>
+            <div class="about-specialist">
+                <h4>Жумабаев Муктарбек Жумабаевич</h4>
+                <span class="line"></span>
+
+                <h6>Стаж работы: <span>10 лет</span></h6>
+                <h6>Специализация:</h6>
+
+                <div class="specialization">
+                    <p>Пластическая хирургия лица:</p>
+
+                    <ul class="uk-list uk-list-bullet">
+                        <li>броулифтинг</li>
+                        <li>блефаропластика</li>
+                        <li>оптопластика</li>
+                    </ul>
+
+                    <p>Коррекция груди</p>
+                    <p>Коррекция формы ягодиц</p>
+                </div>
+            </div>
+        </div>
+        <div class=" uk-visible@m">
+            <div class="specialist-image">
+                <div class="image-wrap">
+                    <div class="uk-inline">
+                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
+                             height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="education-block">
+        <h6>Образование и курсы:</h6>
+
+        <ul class="uk-list uk-list-bullet">
+            <li>Государственный университет медицины и фармации, г. Москва (2006 г.)</li>
+            <li>Клиническая ординатура на базе Одесского национального медицинского университета по специальности
+                «Травматология и ортопедия» (2016 г.)
+            </li>
+            <li>Курсы повышения квалификации «Guarantee of the guality of your endo». Dr. Massimo Giovarruscio</li>
+        </ul>
+    </div>
+
+    <div class="typical-button">
+        <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на прием
+        </button>
+    </div>
+
+</div>

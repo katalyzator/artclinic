@@ -247,7 +247,8 @@
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
                                         {% if item.service_type == 'face' %}
-                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}</li>
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
@@ -259,7 +260,8 @@
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
                                         {% if item.service_type == 'hand' %}
-                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}</li>
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
@@ -271,7 +273,8 @@
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
                                         {% if item.service_type == 'chest' %}
-                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}</li>
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
@@ -283,7 +286,8 @@
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
                                         {% if item.service_type == 'hip' %}
-                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}</li>
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
@@ -295,7 +299,8 @@
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
                                         {% if item.service_type == 'pussy' %}
-                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}</li>
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
@@ -307,7 +312,8 @@
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
                                         {% if item.service_type == 'legs' %}
-                                            <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}</li>
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
@@ -338,7 +344,8 @@
                             <ul class="uk-list uk-list-bullet">
                                 {% for item in services %}
                                     {% if item.service_category == 'cosmetology' %}
-                                        <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                        <li class="service_shower"
+                                            data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}</li>
                                     {% endif %}
                                 {% endfor %}
                             </ul>
@@ -353,7 +360,8 @@
                             <ul class="uk-list uk-list-bullet">
                                 {% for item in services %}
                                     {% if item.service_category == 'surgery' %}
-                                        <li uk-toggle="target: #modal-center">{{ item.title }}</li>
+                                        <li class="service_shower"
+                                            data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}</li>
                                     {% endif %}
                                 {% endfor %}
                             </ul>
@@ -562,27 +570,7 @@
 </div>
 
 <div id="modal-center" class="uk-flex-top service-modal" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
-        <button class="uk-modal-close-default" type="button" uk-close="ratio: 2"></button>
-
-        <h4>Блефаропластика</h4>
-        <span class="line"></span>
-
-        <p>Блефаропластика — операция по изменению формы век, разреза глаз (от др.-греч. βλέφαρον — веко). Данный вид
-            оперативного вмешательства предполагает иссечение избытков кожного покрова и жировых образований.</p>
-        <p>Показаниями к проведению блефаропластики являются: нависание кожи верхних и нижних век, «жировые мешки» век,
-            опущение нижних уголков глаз, разрез и форма глаз.</p>
-        <p>Излишки кожи и жира во время операции удаляются через разрезы в естественных складках глаз. Блефаропластика
-            проводится в условиях стационара под общим обезболиванием. Продолжительность — от 2 до 3 часов. Период
-            реабилитации не превышает 10—12 дней.</p>
-
-        <div class="typical-button">
-            <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на прием
-            </button>
-        </div>
-
-    </div>
 </div>
 
 <div id="appointment-modal" class="uk-flex-top appointment-modal" uk-modal>
@@ -618,64 +606,7 @@
 
 
 <div id="employer-modal" class="uk-flex-top specialist-modal" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
-        <button class="uk-modal-close-default" type="button" uk-close="ratio: 2"></button>
-
-        <div class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-2@l" uk-grid>
-            <div>
-                <div class="about-specialist">
-                    <h4>Жумабаев Муктарбек Жумабаевич</h4>
-                    <span class="line"></span>
-
-                    <h6>Стаж работы: <span>10 лет</span></h6>
-                    <h6>Специализация:</h6>
-
-                    <div class="specialization">
-                        <p>Пластическая хирургия лица:</p>
-
-                        <ul class="uk-list uk-list-bullet">
-                            <li>броулифтинг</li>
-                            <li>блефаропластика</li>
-                            <li>оптопластика</li>
-                        </ul>
-
-                        <p>Коррекция груди</p>
-                        <p>Коррекция формы ягодиц</p>
-                    </div>
-                </div>
-            </div>
-            <div class=" uk-visible@m">
-                <div class="specialist-image">
-                    <div class="image-wrap">
-                        <div class="uk-inline">
-                            <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
-                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                            <div class="image-border"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="education-block">
-            <h6>Образование и курсы:</h6>
-
-            <ul class="uk-list uk-list-bullet">
-                <li>Государственный университет медицины и фармации, г. Москва (2006 г.)</li>
-                <li>Клиническая ординатура на базе Одесского национального медицинского университета по специальности
-                    «Травматология и ортопедия» (2016 г.)
-                </li>
-                <li>Курсы повышения квалификации «Guarantee of the guality of your endo». Dr. Massimo Giovarruscio</li>
-            </ul>
-        </div>
-
-        <div class="typical-button">
-            <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на прием
-            </button>
-        </div>
-
-    </div>
 </div>
 
 <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -760,6 +691,26 @@
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+</script>
+
+<script>
+    $('.service_shower').each(function (i, obj) {
+        $(obj).on('click', function (event) {
+            event.preventDefault();
+            var that = this;
+            var url = $(that).attr('data-ajax-url'); // the script where you handle the form input.
+            $.ajax({
+                method: "GET",
+                dataType: "HTML",
+                url: url,
+               success: function (response) {
+                    $('#modal-center').html(response);
+                    UIkit.modal("#modal-center").show();
+                }
+            });
+            // avoid to execute the actual submit of the form.
+        });
+    })
 </script>
 </body>
 </html>

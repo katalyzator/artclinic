@@ -18,12 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from artclinic import settings
-from main.views import index_view
+from main.views import index_view, ajax_service_detail_view
 
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
-    path('', index_view)
+    path('', index_view),
+    path('service_detail/<int:id>/', ajax_service_detail_view, name='service_detail'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
