@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, render_to_response
 from django.views.decorators.csrf import csrf_exempt
 
-from main.models import Action, AboutImage, Specialist, Service, Contact, Application
+from main.models import Action, AboutImage, Specialist, Service, Contact, Application, Email
 
 
 def index_view(request):
@@ -41,5 +41,13 @@ def application_view(request):
     name = request.POST['name']
     phone_number = request.POST['phone_number']
     Application.objects.create(name=name, phone_number=phone_number)
+
+    return JsonResponse(dict(success=True))
+
+
+@csrf_exempt
+def email_application_view(request):
+    email = request.POST['email']
+    Email.objects.create(email=email)
 
     return JsonResponse(dict(success=True))

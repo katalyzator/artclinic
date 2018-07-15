@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view),
     path('application/', application_view, name='application'),
+    path('email_application/', email_application_view, name='email-application'),
     path('service_detail/<int:id>/', ajax_service_detail_view, name='service_detail'),
     path('specialist_detail/<int:id>/', ajax_specialist_detail_view, name='specialist_detail'),
 ]

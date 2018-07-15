@@ -161,8 +161,8 @@
                                 </div>
                                 <p>Подпишитесь и будьте всегда в курсе самых выгодных предложений!</p>
 
-                                <form>
-                                    <input class="uk-input" type="text" placeholder="E-MAIL">
+                                <form class="email-form" method="post" action="{% url 'email-application' %}">
+                                    <input class="uk-input" type="text" name="email" placeholder="E-MAIL">
                                     <button class="uk-button uk-button-default">ПОДПИСАТЬСЯ</button>
                                 </form>
                             </div>
@@ -740,7 +740,22 @@
                     alert('Заявка успешно отправлена');
                 }
             });
-        })
+        });
+
+        $('.email-form').submit(function (event) {
+            event.preventDefault();
+            var url = $('.email-form').attr('action');
+            $.ajax({
+                method: "POST",
+                dataType: "HTML",
+                data: $('.email-form').serialize(),
+                url: url,
+                success: function (response) {
+                    document.getElementsByClassName('email-form')[0].reset();
+                    alert('Вы успешно подписались на наши рассылки');
+                }
+            });
+        });
     })
 
 </script>
