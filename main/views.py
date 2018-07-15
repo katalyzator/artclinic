@@ -1,6 +1,6 @@
 from django.shortcuts import render, render_to_response
 
-from main.models import Action, AboutImage, Specialist, Service
+from main.models import Action, AboutImage, Specialist, Service, Contact
 
 
 def index_view(request):
@@ -8,7 +8,9 @@ def index_view(request):
     slider_images = AboutImage.objects.all()
     specialists = Specialist.objects.all()
     services = Service.objects.all()
-    context = {"actions": actions, "slider_images": slider_images, "specialists": specialists, "services": services}
+    contact = Contact.objects.last()
+    context = {"actions": actions, "slider_images": slider_images, "specialists": specialists, "services": services,
+               "contact": contact}
     template = 'index.html'
 
     return render(request, template, context)

@@ -22,6 +22,7 @@ from main.views import *
 
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
     path('', index_view),
     path('service_detail/<int:id>/', ajax_service_detail_view, name='service_detail'),

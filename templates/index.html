@@ -481,13 +481,7 @@
                     <h4>Контакты</h4>
                     <span class="line"></span>
 
-                    <p>Ахунбаева, 21</p>
-                    <p>+996 (312) 90-88-78<br>
-                        +996 (550) 90-88-78<br>
-                        +996 (705) 90-88-78
-                    </p>
-                    <p>пн - сб 10:00-20:00<br>
-                        вс - выходной</p>
+                    {{ contact.text|safe }}
 
                     <div class="typical-button">
                         <button class="uk-button uk-button-default" uk-toggle="target: #appointment-modal">Записаться на

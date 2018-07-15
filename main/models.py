@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 
 
@@ -114,3 +115,16 @@ class Service(models.Model):
 
     def __str__(self):
         return "{}".format(self.title)
+
+
+class Contact(models.Model):
+    text = RichTextField(verbose_name='Контент')
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Контакты'
+        verbose_name = 'объект'
+
+    def __str__(self):
+        return "Контакты {}".format(str(self.id))

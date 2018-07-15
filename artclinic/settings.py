@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -111,3 +112,11 @@ STATICFILES_DIRS = (
 )
 JET_DEFAULT_THEME = 'green'
 JET_SIDE_MENU_COMPACT = True
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 800,
+    },
+}
