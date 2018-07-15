@@ -128,3 +128,15 @@ class Contact(models.Model):
 
     def __str__(self):
         return "Контакты {}".format(str(self.id))
+
+
+class Application(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Имя')
+    phone_number = models.CharField(max_length=255, verbose_name='Номер телефона')
+
+    class Meta:
+        verbose_name_plural = 'Заявки'
+        verbose_name = 'Заявку'
+
+    def __str__(self):
+        return "{}".format(self.name)

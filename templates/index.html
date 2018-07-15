@@ -399,7 +399,8 @@
                                                 <div class="image-border"></div>
                                                 <a class="uk-position-absolute uk-transform-center specialist-shower"
                                                    style="left: 85%; top: 85%"
-                                                   href="{% url 'specialist_detail' id=item.id %}" uk-marker uk-toggle></a>
+                                                   href="{% url 'specialist_detail' id=item.id %}" uk-marker
+                                                   uk-toggle></a>
                                             </div>
                                         </div>
                                         <h5>{{ item.full_name }}</h5>
@@ -577,19 +578,19 @@
 
         <p>Оставьте заявку и наш оператор <br> перезвонит Вам!</p>
 
-        <form>
+        <form class="application-form" method="post" action="{% url 'application' %}">
             <fieldset class="uk-fieldset">
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="ВАШЕ ИМЯ">
+                    <input class="uk-input" type="text" name="name" placeholder="ВАШЕ ИМЯ">
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="number" placeholder="ВАШ НОМЕР">
+                    <input class="uk-input" type="text" name="phone_number" placeholder="ВАШ НОМЕР">
                 </div>
 
                 <div class="typical-button">
-                    <button class="uk-button uk-button-default">Записаться на прием</button>
+                    <button type="submit" class="uk-button uk-button-default">Записаться на прием</button>
                 </div>
 
             </fieldset>
@@ -722,6 +723,24 @@
             });
             // avoid to execute the actual submit of the form.
         });
+    });
+
+    $(document).ready(function () {
+        $('.application-form').submit(function (event) {
+            event.preventDefault();
+            var url = $('.application-form').attr('action');
+            $.ajax({
+                method: "POST",
+                dataType: "HTML",
+                data: $('.application-form').serialize(),
+                url: url,
+                success: function (response) {
+                    document.getElementsByClassName('application-form')[0].reset();
+                    UIkit.modal("#appointment-modal").hide();
+                    alert('Заявка успешно отправлена');
+                }
+            });
+        })
     })
 
 </script>
