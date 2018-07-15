@@ -5,23 +5,20 @@
     <div class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-2@l" uk-grid>
         <div>
             <div class="about-specialist">
-                <h4>Жумабаев Муктарбек Жумабаевич</h4>
+                <h4>{{ specialist.full_name }}</h4>
                 <span class="line"></span>
 
-                <h6>Стаж работы: <span>10 лет</span></h6>
+                <h6>Стаж работы: <span>{{ specialist.experience }} лет</span></h6>
                 <h6>Специализация:</h6>
 
                 <div class="specialization">
-                    <p>Пластическая хирургия лица:</p>
 
                     <ul class="uk-list uk-list-bullet">
-                        <li>броулифтинг</li>
-                        <li>блефаропластика</li>
-                        <li>оптопластика</li>
+                        {% for item in specialist.specialization.all %}
+                            <li>{{ item.title }}</li>
+                        {% endfor %}
                     </ul>
 
-                    <p>Коррекция груди</p>
-                    <p>Коррекция формы ягодиц</p>
                 </div>
             </div>
         </div>
@@ -29,7 +26,7 @@
             <div class="specialist-image">
                 <div class="image-wrap">
                     <div class="uk-inline">
-                        <img data-src="{% static 'images/doc1.jpg' %}" class="uk-border-circle" width="250"
+                        <img data-src="{{ specialist.image.url }}" class="uk-border-circle" width="250"
                              height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                         <div class="image-border"></div>
                     </div>
@@ -42,11 +39,9 @@
         <h6>Образование и курсы:</h6>
 
         <ul class="uk-list uk-list-bullet">
-            <li>Государственный университет медицины и фармации, г. Москва (2006 г.)</li>
-            <li>Клиническая ординатура на базе Одесского национального медицинского университета по специальности
-                «Травматология и ортопедия» (2016 г.)
-            </li>
-            <li>Курсы повышения квалификации «Guarantee of the guality of your endo». Dr. Massimo Giovarruscio</li>
+            {% for item in specialist.courses.all %}
+                <li>{{ item.title }}</li>
+            {% endfor %}
         </ul>
     </div>
 

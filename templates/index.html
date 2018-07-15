@@ -397,9 +397,9 @@
                                                      width="250"
                                                      height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
                                                 <div class="image-border"></div>
-                                                <a class="uk-position-absolute uk-transform-center"
+                                                <a class="uk-position-absolute uk-transform-center specialist-shower"
                                                    style="left: 85%; top: 85%"
-                                                   href="#employer-modal" uk-marker uk-toggle></a>
+                                                   href="{% url 'specialist_detail' id=item.id %}" uk-marker uk-toggle></a>
                                             </div>
                                         </div>
                                         <h5>{{ item.full_name }}</h5>
@@ -703,14 +703,33 @@
                 method: "GET",
                 dataType: "HTML",
                 url: url,
-               success: function (response) {
+                success: function (response) {
                     $('#modal-center').html(response);
                     UIkit.modal("#modal-center").show();
                 }
             });
             // avoid to execute the actual submit of the form.
         });
+    });
+
+    $('.specialist-shower').each(function (i, obj) {
+        $(obj).on('click', function (event) {
+            event.preventDefault();
+            var that = this;
+            var url = $(that).attr('href'); // the script where you handle the form input.
+            $.ajax({
+                method: "GET",
+                dataType: "HTML",
+                url: url,
+                success: function (response) {
+                    $('#employer-modal').html(response);
+                    UIkit.modal("#employer-modal").show();
+                }
+            });
+            // avoid to execute the actual submit of the form.
+        });
     })
+
 </script>
 </body>
 </html>
