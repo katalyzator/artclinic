@@ -23,11 +23,12 @@
 
                 <div class="uk-navbar-left">
                     <a href="#offcanvas-push" class="burger" uk-toggle>
-                        <div class="wrapper-menu">
-                            <div class="line-menu half start"></div>
-                            <div class="line-menu"></div>
-                            <div class="line-menu half end"></div>
-                        </div>
+                        <!--<div class="wrapper-menu">-->
+                            <!--<div class="line-menu half start"></div>-->
+                            <!--<div class="line-menu"></div>-->
+                            <!--<div class="line-menu half end"></div>-->
+                        <!--</div>-->
+                        <img src="{% static 'images/burger-icon.svg' %}" alt="burger icon">
                     </a>
                     <a class="uk-navbar-item uk-logo" href="#home">
                         <img src="{% static 'images/fixed-header-logotype.svg' %}" class="fixed-logo" alt="logotype">
@@ -156,7 +157,7 @@
                         <div class="sales-content uk-height-1-1">
                             <div class="uk-height-1-1">
                                 <div class="title-underline">
-                                    <h4><span><span>Ждете</span></span> <span><span> подходящую</span></span>
+                                    <h4><span><span>Ждете</span></span> <span><span>&nbsp;подходящую</span></span>
                                         <span><span>акцию?</span></span></h4>
                                 </div>
                                 <p>Подпишитесь и будьте всегда в курсе самых выгодных предложений!</p>
@@ -411,13 +412,6 @@
                         </ul>
                     </div>
 
-                    <!--<div class="uk-hidden@s uk-light">-->
-                    <!--<a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous-->
-                    <!--uk-slider-item="previous"></a>-->
-                    <!--<a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next-->
-                    <!--uk-slider-item="next"></a>-->
-                    <!--</div>-->
-
                     <div>
                         <a class="uk-position-center-left-out" href="#" uk-slidenav-previous
                            uk-slider-item="previous"></a>
@@ -534,9 +528,9 @@
         </div>
     </footer>
 
-    <div id="offcanvas-push" class="sidebar" uk-offcanvas="mode: push;">
+    <div id="offcanvas-push" class="sidebar" uk-offcanvas="mode: push; overlay: true">
         <div class="uk-offcanvas-bar uk-flex uk-flex-column">
-            <!--<button class="uk-offcanvas-close" type="button" uk-close></button>-->
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
 
             <ul class="uk-nav">
                 <li class="uk-active">
@@ -605,6 +599,7 @@
 </div>
 
 <script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/uikit.min.js' %}"></script>
 <script src="{% static 'js/uikit-icons.min.js' %}"></script>
 <script src="{% static 'js/jquery.event.move.js' %}"></script>
@@ -625,139 +620,9 @@
             icon: '{% static 'images/location.svg' %}'
         });
     }
-
-    $(function () {
-        var worksSlider = $('.works-slider');
-
-        $(".uk-navbar-nav > li > a").on("click", function () {
-            $(".uk-navbar-nav > li").removeClass("uk-active");
-            $(this).parent("li").addClass("uk-active");
-        });
-
-        $('.uk-navbar-nav a[href^="#"], .all-services-link, .uk-logo').on("click", function (t) {
-            var e = $(this.getAttribute("href"));
-            e.length && (t.preventDefault(), $("html, body").stop().animate({scrollTop: e.offset().top}, 1e3));
-        });
-
-        worksSlider.slick({
-            infinite: false,
-            dots: true,
-            lazyLoad: 'ondemand',
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            speed: 500,
-            fade: true,
-            cssEase: 'ease-in',
-            prevArrow: '<a href="#" class="uk-position-bottom-left" uk-slidenav-previous></a>',
-            nextArrow: '<a href="#" class="uk-position-bottom-right" uk-slidenav-next></a>',
-            draggable: false,
-        });
-
-        $('.double-image').twentytwenty({
-            before_label: 'До', // Set a custom before label
-            after_label: 'После', // Set a custom after label
-        });
-
-        worksSlider.on('click', '.uk-slidenav, .slick-dots li', function () {
-            var currentSlider = $('.works-slider .slick-list .slick-active');
-            var sliderIndex = currentSlider.attr('data-slick-index');
-
-            $('.work-type li').each(function () {
-                var typeIndex = $(this).attr('data-type');
-
-                if (sliderIndex === typeIndex) {
-                    $('.work-type li').removeClass('active-type');
-                    $(this).addClass('active-type');
-                }
-
-            })
-        });
-
-        var wrapperMenu = $('.wrapper-menu');
-
-        wrapperMenu.on('click', function (event) {
-            wrapperMenu.toggleClass('open');
-        });
-
-        $('.sidebar .uk-nav > li > a').on('click', function () {
-            wrapperMenu.removeClass('open');
-        });
-    });
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-</script>
-
-<script>
-    $('.service_shower').each(function (i, obj) {
-        $(obj).on('click', function (event) {
-            event.preventDefault();
-            var that = this;
-            var url = $(that).attr('data-ajax-url'); // the script where you handle the form input.
-            $.ajax({
-                method: "GET",
-                dataType: "HTML",
-                url: url,
-                success: function (response) {
-                    $('#modal-center').html(response);
-                    UIkit.modal("#modal-center").show();
-                }
-            });
-            // avoid to execute the actual submit of the form.
-        });
-    });
-
-    $('.specialist-shower').each(function (i, obj) {
-        $(obj).on('click', function (event) {
-            event.preventDefault();
-            var that = this;
-            var url = $(that).attr('href'); // the script where you handle the form input.
-            $.ajax({
-                method: "GET",
-                dataType: "HTML",
-                url: url,
-                success: function (response) {
-                    $('#employer-modal').html(response);
-                    UIkit.modal("#employer-modal").show();
-                }
-            });
-            // avoid to execute the actual submit of the form.
-        });
-    });
-
-    $(document).ready(function () {
-        $('.application-form').submit(function (event) {
-            event.preventDefault();
-            var url = $('.application-form').attr('action');
-            $.ajax({
-                method: "POST",
-                dataType: "HTML",
-                data: $('.application-form').serialize(),
-                url: url,
-                success: function (response) {
-                    document.getElementsByClassName('application-form')[0].reset();
-                    UIkit.modal("#appointment-modal").hide();
-                    alert('Заявка успешно отправлена');
-                }
-            });
-        });
-
-        $('.email-form').submit(function (event) {
-            event.preventDefault();
-            var url = $('.email-form').attr('action');
-            $.ajax({
-                method: "POST",
-                dataType: "HTML",
-                data: $('.email-form').serialize(),
-                url: url,
-                success: function (response) {
-                    document.getElementsByClassName('email-form')[0].reset();
-                    alert('Вы успешно подписались на наши рассылки');
-                }
-            });
-        });
-    })
-
 </script>
 </body>
 </html>
