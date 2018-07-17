@@ -163,7 +163,7 @@
                                 <p>Подпишитесь и будьте всегда в курсе самых выгодных предложений!</p>
 
                                 <form class="email-form" method="post" action="{% url 'email-application' %}">
-                                    <input class="uk-input" type="text" name="email" placeholder="E-MAIL">
+                                    <input class="uk-input" type="text" name="email" placeholder="E-MAIL" required>
                                     <button class="uk-button uk-button-default">ПОДПИСАТЬСЯ</button>
                                 </form>
                             </div>
@@ -580,7 +580,7 @@
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="phone_number" placeholder="ВАШ НОМЕР">
+                    <input class="uk-input" type="text" name="phone_number" placeholder="ВАШ НОМЕР" required>
                 </div>
 
                 <div class="typical-button">
