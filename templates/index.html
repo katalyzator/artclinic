@@ -24,9 +24,9 @@
                 <div class="uk-navbar-left">
                     <a href="#offcanvas-push" class="burger" uk-toggle>
                         <!--<div class="wrapper-menu">-->
-                            <!--<div class="line-menu half start"></div>-->
-                            <!--<div class="line-menu"></div>-->
-                            <!--<div class="line-menu half end"></div>-->
+                        <!--<div class="line-menu half start"></div>-->
+                        <!--<div class="line-menu"></div>-->
+                        <!--<div class="line-menu half end"></div>-->
                         <!--</div>-->
                         <img src="{% static 'images/burger-icon.svg' %}" alt="burger icon">
                     </a>
@@ -623,6 +623,19 @@
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122498189-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122498189-1');
 </script>
 </body>
 </html>
