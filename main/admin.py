@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from main.models import Action, AboutImage, Specialist, Email, Service, Specialization, Course, Contact, Application
+from main.models import Action, AboutImage, Specialist, Email, Service, Specialization, Course, Contact, Application, \
+    SpecialOffer
 
 admin.site.site_header = 'Панель управления сайтом ArtClinic'
 
@@ -13,3 +14,4 @@ admin.site.register(Specialization)
 admin.site.register(Course)
 admin.site.register(Contact)
 admin.site.register(Application)
+admin.site.register(SpecialOffer)

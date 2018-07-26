@@ -90,11 +90,11 @@ class Email(models.Model):
 
 class Service(models.Model):
     SERVICE_CHOICES = (
-        ("face", "Лицо"),
-        ("hand", "Рука"),
+        ("face", "Лицо/Голова"),
+        ("hand", "Руки, ноги"),
         ("chest", "Грудь"),
-        ("hip", "Бедро"),
-        ("pussy", "Pussy"),
+        ("hip", "Живот, бока и ягодицы"),
+        ("pussy", "Интимная зона"),
         ("legs", "Ноги")
     )
 
@@ -140,3 +140,12 @@ class Application(models.Model):
 
     def __str__(self):
         return "{}".format(self.name)
+
+
+class SpecialOffer(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Title', null=True, blank=True)
+    description = models.TextField(verbose_name='Описание')
+
+    class Meta:
+        verbose_name_plural = 'Актуальные предложения'
+        verbose_name = 'Объект'
