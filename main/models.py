@@ -146,6 +146,9 @@ class SpecialOffer(models.Model):
     title = models.CharField(max_length=255, verbose_name='Title', null=True, blank=True)
     description = models.TextField(verbose_name='Описание')
 
+    def __str__(self):
+        return "{}".format(self.title)
+
     class Meta:
         verbose_name_plural = 'Актуальные предложения'
         verbose_name = 'Объект'
