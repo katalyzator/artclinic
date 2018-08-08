@@ -128,16 +128,16 @@
                             <ul class="uk-slideshow-items">
 
                                 {% for item in actions %}
-                                <li class="uk-height-1-1">
-                                    <div class="sale-card uk-height-1-1">
-                                        <div class="section-title">
-                                            <h4>АКЦИЯ</h4>
-                                        </div>
-                                        <span class="line"></span>
+                                    <li class="uk-height-1-1">
+                                        <div class="sale-card uk-height-1-1">
+                                            <div class="section-title">
+                                                <h4>АКЦИЯ</h4>
+                                            </div>
+                                            <span class="line"></span>
 
-                                        <p>{{ item.description }}</p>
-                                    </div>
-                                </li>
+                                            <p>{{ item.description }}</p>
+                                        </div>
+                                    </li>
                                 {% endfor %}
                             </ul>
 
@@ -200,9 +200,9 @@
 
                             <ul class="uk-slideshow-items">
                                 {% for item in slider_images %}
-                                <li>
-                                    <img src="{{ item.image.url }}" alt="" uk-cover>
-                                </li>
+                                    <li>
+                                        <img src="{{ item.image.url }}" alt="" uk-cover>
+                                    </li>
                                 {% endfor %}
                             </ul>
 
@@ -246,19 +246,14 @@
                         </div>
                         <div class="js-filter">
                             <div class="category-block" data-body="face">
-                                <<<<<<< Updated upstream
                                 <h3>Лицо/Голова</h3>
-                                =======
-                                <h3>Лицо/голова</h3>
-                                >>>>>>> Stashed changes
-
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
-                                    {% if item.service_type == 'face' %}
-                                    <li class="service_shower"
-                                        data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
-                                    </li>
-                                    {% endif %}
+                                        {% if item.service_type == 'face' %}
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
+                                            </li>
+                                        {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -268,11 +263,11 @@
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
-                                    {% if item.service_type == 'hand' %}
-                                    <li class="service_shower"
-                                        data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
-                                    </li>
-                                    {% endif %}
+                                        {% if item.service_type == 'hand' %}
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
+                                            </li>
+                                        {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -282,11 +277,11 @@
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
-                                    {% if item.service_type == 'chest' %}
-                                    <li class="service_shower"
-                                        data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
-                                    </li>
-                                    {% endif %}
+                                        {% if item.service_type == 'chest' %}
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
+                                            </li>
+                                        {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -296,11 +291,11 @@
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
-                                    {% if item.service_type == 'hip' %}
-                                    <li class="service_shower"
-                                        data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
-                                    </li>
-                                    {% endif %}
+                                        {% if item.service_type == 'hip' %}
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
+                                            </li>
+                                        {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -310,11 +305,11 @@
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
-                                    {% if item.service_type == 'pussy' %}
-                                    <li class="service_shower"
-                                        data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
-                                    </li>
-                                    {% endif %}
+                                        {% if item.service_type == 'pussy' %}
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
+                                            </li>
+                                        {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -324,11 +319,11 @@
 
                                 <ul class="uk-list uk-list-bullet uk-child-width-1-2">
                                     {% for item in services %}
-                                    {% if item.service_type == 'legs' %}
-                                    <li class="service_shower"
-                                        data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
-                                    </li>
-                                    {% endif %}
+                                        {% if item.service_type == 'legs' %}
+                                            <li class="service_shower"
+                                                data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
+                                            </li>
+                                        {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -357,11 +352,11 @@
 
                             <ul class="uk-list uk-list-bullet">
                                 {% for item in services %}
-                                {% if item.service_category == 'cosmetology' %}
-                                <li class="service_shower"
-                                    data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
-                                </li>
-                                {% endif %}
+                                    {% if item.service_category == 'cosmetology' %}
+                                        <li class="service_shower"
+                                            data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
+                                        </li>
+                                    {% endif %}
                                 {% endfor %}
                             </ul>
                         </div>
@@ -374,11 +369,11 @@
 
                             <ul class="uk-list uk-list-bullet">
                                 {% for item in services %}
-                                {% if item.service_category == 'surgery' %}
-                                <li class="service_shower"
-                                    data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
-                                </li>
-                                {% endif %}
+                                    {% if item.service_category == 'surgery' %}
+                                        <li class="service_shower"
+                                            data-ajax-url="{% url 'service_detail' id=item.id %}">{{ item.title }}
+                                        </li>
+                                    {% endif %}
                                 {% endfor %}
                             </ul>
                         </div>
@@ -405,24 +400,24 @@
                         <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-3@l uk-grid uk-grid-large">
 
                             {% for item in specialists %}
-                            <li>
-                                <div class="specialist-card">
-                                    <div class="image-wrap">
-                                        <div class="uk-inline uk-light">
-                                            <img data-src="{{ item.image.url }}" class="uk-border-circle"
-                                                 width="250"
-                                                 height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
-                                            <div class="image-border"></div>
-                                            <a class="uk-position-absolute uk-transform-center specialist-shower"
-                                               style="left: 85%; top: 85%"
-                                               href="{% url 'specialist_detail' id=item.id %}" uk-marker
-                                               uk-toggle></a>
+                                <li>
+                                    <div class="specialist-card">
+                                        <div class="image-wrap">
+                                            <div class="uk-inline uk-light">
+                                                <img data-src="{{ item.image.url }}" class="uk-border-circle"
+                                                     width="250"
+                                                     height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                                                <div class="image-border"></div>
+                                                <a class="uk-position-absolute uk-transform-center specialist-shower"
+                                                   style="left: 85%; top: 85%"
+                                                   href="{% url 'specialist_detail' id=item.id %}" uk-marker
+                                                   uk-toggle></a>
+                                            </div>
                                         </div>
+                                        <h5>{{ item.full_name }}</h5>
+                                        <p>{{ item.description }}</p>
                                     </div>
-                                    <h5>{{ item.full_name }}</h5>
-                                    <p>{{ item.description }}</p>
-                                </div>
-                            </li>
+                                </li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -444,37 +439,23 @@
         <div class="uk-container">
             <div class="examples-block" uk-scrollspy="cls: uk-animation-fade; repeat: true">
                 <ul class="work-type uk-list uk-visible@m">
-                    <li class="active-type" data-type="0">Блефаропластика <span class="line"></span></li>
-                    <li data-type="1">Блефаропластика <span class="line"></span></li>
-                    <li data-type="2">Блефаропластика <span class="line"></span></li>
+                    {% for item in works %}
+                        <li {% if item.0 == 0 %} class="active-type" {% endif %} data-type="{{ item.0 }}">{{ item.1.title }} <span class="line"></span></li>
+                    {% endfor %}
                 </ul>
 
 
                 <div class="works-slider">
-                    <div class="sl-slide">
-                        <div class="double-image twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
-                            <!-- The after image is last -->
-                            <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
+                    {% for item in works %}
+                        <div class="sl-slide">
+                            <div class="double-image twentytwenty-container">
+                                <!-- The before image is first -->
+                                <img src="{{ item.1.before_image.url }}" alt="slider image">
+                                <!-- The after image is last -->
+                                <img src="{{ item.1.after_image.url }}" alt="slider-image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="sl-slide">
-                        <div class="double-image twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="{% static 'images/about-us-img.jpg' %}" alt="slider image">
-                            <!-- The after image is last -->
-                            <img src="{% static 'images/doc1.jpg' %}" alt="slider-image">
-                        </div>
-                    </div>
-                    <div class="sl-slide">
-                        <div class="double-image twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="images/about-us-img.jpg" alt="slider image">
-                            <!-- The after image is last -->
-                            <img src="images/doc1.jpg" alt="slider-image">
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

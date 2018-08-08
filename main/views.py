@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, render_to_response
 from django.views.decorators.csrf import csrf_exempt
 
-from main.models import Action, AboutImage, Specialist, Service, Contact, Application, Email, SpecialOffer
+from main.models import Action, AboutImage, Specialist, Service, Contact, Application, Email, SpecialOffer, Work
 
 
 def index_view(request):
@@ -11,9 +11,17 @@ def index_view(request):
     specialists = Specialist.objects.all()
     services = Service.objects.all()
     contact = Contact.objects.last()
+    works = Work.objects.all()
     special_offer = SpecialOffer.objects.last()
+
+    work_list = []
+    index = 0
+    for item in works:
+        work_list.append(tuple((index, item)))
+        index = index + 1
+
     context = {"actions": actions, "slider_images": slider_images, "specialists": specialists, "services": services,
-               "contact": contact, "special_offer": special_offer}
+               "contact": contact, "special_offer": special_offer, "works": work_list}
     template = 'index.html'
 
     return render(request, template, context)

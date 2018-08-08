@@ -60,10 +60,10 @@ class Specialist(models.Model):
     full_name = models.CharField(max_length=255, verbose_name='ФИО')
     description = models.TextField(verbose_name='Описание')
     image = models.ImageField(upload_to='specialist/images', verbose_name='Картинка')
-    experience = models.PositiveIntegerField(default=1, verbose_name='Стаж работы (лет)')
-    specialization = models.ManyToManyField(Specialization, null=True, related_name='specialization',
+    experience = models.CharField(max_length=255, default="", verbose_name='Стаж работы (лет)')
+    specialization = models.ManyToManyField(Specialization, related_name='specialization',
                                             verbose_name='Список специализаций')
-    courses = models.ManyToManyField(Course, null=True, related_name='courses', verbose_name='Образование и курсы')
+    courses = models.ManyToManyField(Course, related_name='courses', verbose_name='Образование и курсы')
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -152,3 +152,18 @@ class SpecialOffer(models.Model):
     class Meta:
         verbose_name_plural = 'Актуальные предложения'
         verbose_name = 'Объект'
+
+
+class Work(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Название')
+    before_image = models.ImageField(upload_to='images/works', verbose_name='Картинка (До)')
+    after_image = models.ImageField(upload_to='images/works', verbose_name='Картинка (После)')
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Работы'
+        verbose_name = 'Объект'
+
+    def __str__(self):
+        return "{}".format(self.title)
