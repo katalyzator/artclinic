@@ -1,3 +1,5 @@
+{% load thumbnail %}
+
 <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
     <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -26,8 +28,10 @@
             <div class="specialist-image">
                 <div class="image-wrap">
                     <div class="uk-inline">
-                        <img data-src="{{ specialist.image.url }}" class="uk-border-circle" width="250"
-                             height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                        {% thumbnail specialist.image "250x250" crop="center" as im %}
+                            <img data-src="{{ im.url }}" class="uk-border-circle" alt="doctor image"
+                                 uk-img="target: !.uk-slider-items">
+                        {% endthumbnail %}
                         <div class="image-border"></div>
                     </div>
                 </div>
