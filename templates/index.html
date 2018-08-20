@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles thumbnail %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -404,9 +404,12 @@
                                     <div class="specialist-card">
                                         <div class="image-wrap">
                                             <div class="uk-inline uk-light">
-                                                <img data-src="{{ item.image.url }}" class="uk-border-circle"
-                                                     width="250"
-                                                     height="250" alt="doctor image" uk-img="target: !.uk-slider-items">
+                                                {% thumbnail item.image "250x250" crop="center" as im %}
+                                                    <img data-src="{{ im.url }}" class="uk-border-circle"
+                                                         width="{{ im.width }}"
+                                                         height="{{ im.height }}" alt="doctor image"
+                                                         uk-img="target: !.uk-slider-items">
+                                                {% endthumbnail %}
                                                 <div class="image-border"></div>
                                                 <a class="uk-position-absolute uk-transform-center specialist-shower"
                                                    style="left: 85%; top: 85%"
@@ -440,7 +443,9 @@
             <div class="examples-block" uk-scrollspy="cls: uk-animation-fade; repeat: true">
                 <ul class="work-type uk-list uk-visible@m">
                     {% for item in works %}
-                        <li {% if item.0 == 0 %} class="active-type" {% endif %} data-type="{{ item.0 }}">{{ item.1.title }} <span class="line"></span></li>
+                        <li {% if item.0 == 0 %} class="active-type" {% endif %}
+                                                 data-type="{{ item.0 }}">{{ item.1.title }} <span class="line"></span>
+                        </li>
                     {% endfor %}
                 </ul>
 

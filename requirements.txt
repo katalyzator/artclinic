@@ -4,3 +4,4 @@ django-jet==1.0.7
 django-js-asset==1.1.0
 Pillow==5.2.0
 pytz==2018.5
+sorl-thumbnail==12.4.1
