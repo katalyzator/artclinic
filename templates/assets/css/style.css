@@ -624,7 +624,7 @@ h4 {
 }
 
 .all-services .uk-list li {
-    text-transform: capitalize;
+    text-transform: none;
     cursor: pointer;
 }
 
