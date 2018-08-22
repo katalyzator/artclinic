@@ -35,7 +35,7 @@
                     <a class="uk-navbar-item uk-logo" href="#home">
                         <img src="{% static 'images/fixed-header-logotype.svg' %}" class="fixed-logo" alt="logotype">
                     </a>
-                    <a href="#" class="mobile-icon">
+                    <a href="tel:+996550908878" class="mobile-icon">
                         <img src="{% static 'images/mobile-phone-icon.svg' %}" alt="phone icon">
                     </a>
                 </div>
@@ -610,8 +610,8 @@
             myIcon;
 
         map = DG.map('map', {
-            center: [42.842, 74.625],
-            zoom: 18,
+            center: [42.842, 74.626],
+            zoom: 15,
             zoomControl: false
         });
 
@@ -623,24 +623,7 @@
             icon: myIcon
         }).addTo(map);
     });
-    //    function initMap() {
-    //        var map = new google.maps.Map(document.getElementById('map'), {
-    //            zoom: 16,
-    //            center: {lat: 42.8420436, lng: 74.623389}
-    //        });
-    //
-    //        // var image = 'images/logotype.png';
-    //        var marker = new google.maps.Marker({
-    //            position: {lat: 42.8420436, lng: 74.623389},
-    //            map: map,
-    //            title: 'Art Clinic',
-    //            icon: '{% static 'images/location.svg' %}'
-    //        });
-    //    }
 </script>
-<!--<script async defer-->
-<!--src="https://maps.googleapis.com/maps/api/js?callback=initMap">-->
-<!--</script>-->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122498189-1"></script>
 <script>
