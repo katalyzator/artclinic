@@ -610,8 +610,8 @@
             myIcon;
 
         map = DG.map('map', {
-            center: [42.842, 74.626],
-            zoom: 15,
+            center: [42.841979, 74.62564],
+            zoom: 18,
             zoomControl: false
         });
 
@@ -619,7 +619,7 @@
             iconUrl: '{% static 'images/location.svg' %}',
             iconSize: [48, 48]
         });
-        DG.marker([42.842, 74.626], {
+        DG.marker([42.841979, 74.62564], {
             icon: myIcon
         }).addTo(map);
     });
