@@ -5,9 +5,18 @@ from main.models import Action, AboutImage, Specialist, Email, Service, Speciali
 
 admin.site.site_header = 'Панель управления сайтом ArtClinic'
 
+
+class SpecialistAdmin(admin.ModelAdmin):
+    list_display = ['full_name', 'experience', 'number']
+    list_editable = ['number']
+
+    class Meta:
+        model = Specialist
+
+
 admin.site.register(Action)
 admin.site.register(AboutImage)
-admin.site.register(Specialist)
+admin.site.register(Specialist, SpecialistAdmin)
 admin.site.register(Email)
 admin.site.register(Service)
 admin.site.register(Specialization)

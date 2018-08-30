@@ -8,7 +8,7 @@ from main.models import Action, AboutImage, Specialist, Service, Contact, Applic
 def index_view(request):
     actions = Action.objects.all()
     slider_images = AboutImage.objects.all()
-    specialists = Specialist.objects.all().order_by('-updated')
+    specialists = Specialist.objects.all().order_by('number')
     services = Service.objects.all()
     contact = Contact.objects.last()
     works = Work.objects.all()

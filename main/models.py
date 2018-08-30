@@ -64,6 +64,7 @@ class Specialist(models.Model):
     specialization = models.ManyToManyField(Specialization, related_name='specialization',
                                             verbose_name='Список специализаций')
     courses = models.ManyToManyField(Course, related_name='courses', verbose_name='Образование и курсы')
+    number = models.PositiveIntegerField(verbose_name='Порядковый номер', blank=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
