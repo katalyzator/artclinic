@@ -11,7 +11,7 @@ def index_view(request):
     specialists = Specialist.objects.all().order_by('number')
     services = Service.objects.all()
     contact = Contact.objects.last()
-    works = Work.objects.all()
+    works = Work.objects.all().order_by('number')
     special_offer = SpecialOffer.objects.last()
 
     work_list = []

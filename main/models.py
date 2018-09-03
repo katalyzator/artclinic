@@ -159,6 +159,8 @@ class Work(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     before_image = models.ImageField(upload_to='images/works', verbose_name='Картинка (До)')
     after_image = models.ImageField(upload_to='images/works', verbose_name='Картинка (После)')
+    number = models.PositiveIntegerField(verbose_name='Порядковый номер', blank=True)
+
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 

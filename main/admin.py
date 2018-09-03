@@ -14,6 +14,15 @@ class SpecialistAdmin(admin.ModelAdmin):
         model = Specialist
 
 
+class WorkAdmin(admin.ModelAdmin):
+    list_display = ['title', 'number', 'timestamp']
+    list_editable = ['number']
+
+    class Meta:
+        model = Work
+
+
+admin.site.register(Work, WorkAdmin)
 admin.site.register(Action)
 admin.site.register(AboutImage)
 admin.site.register(Specialist, SpecialistAdmin)
@@ -24,4 +33,3 @@ admin.site.register(Course)
 admin.site.register(Contact)
 admin.site.register(Application)
 admin.site.register(SpecialOffer)
-admin.site.register(Work)
