@@ -22,9 +22,25 @@ class WorkAdmin(admin.ModelAdmin):
         model = Work
 
 
+class ActionAdmin(admin.ModelAdmin):
+    list_display = ['title', 'number']
+    list_editable = ['number']
+
+    class Meta:
+        model = Action
+
+
+class AboutImageAdmin(admin.ModelAdmin):
+    list_display = ['title', 'number']
+    list_editable = ['number']
+
+    class Meta:
+        model = AboutImage
+
+
 admin.site.register(Work, WorkAdmin)
-admin.site.register(Action)
-admin.site.register(AboutImage)
+admin.site.register(Action, ActionAdmin)
+admin.site.register(AboutImage, AboutImageAdmin)
 admin.site.register(Specialist, SpecialistAdmin)
 admin.site.register(Email)
 admin.site.register(Service)

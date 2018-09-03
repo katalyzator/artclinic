@@ -5,6 +5,7 @@ from django.db import models
 class Action(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание')
+    number = models.PositiveIntegerField(verbose_name='Порядковый номер', blank=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -19,6 +20,7 @@ class Action(models.Model):
 class AboutImage(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название картинки')
     image = models.ImageField(upload_to='slider/images', verbose_name='Картинка')
+    number = models.PositiveIntegerField(verbose_name='Порядковый номер', blank=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
